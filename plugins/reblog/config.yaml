@@ -1,0 +1,124 @@
+name: Reblog
+id: reblog
+key: reblog
+version: 2.13_rc1
+schema_version: 2.952
+description: Plugin for automatic syndication with attribution.
+author_name: Six Apart Ltd.; original Reblog by Eyebeam & Stamen
+settings:
+    restrict_reblog:
+        scope: system
+        default: 0
+    restrict_sourcefeeds:
+        scope: system
+        default: 0
+    default_author:
+        scope: blog
+    max_failures:
+        scope: blog
+        default: 5
+    frequency:
+        scope: blog
+        default: 43200
+    import_categories:
+        scope: blog
+        default: 0
+    rebuild_individual:
+        scope: blog
+        default: 1
+    display_entry_details:
+        scope: blog
+        default: 0
+system_config_template: system_config.tmpl
+callbacks:
+    MT::App::CMS::template_param.edit_entry: $reblog::Reblog::CMS::inline_edit_entry
+    cms_pre_save.ReblogSourcefeed: $reblog::Reblog::CMS::cms_sourcefeed_presave_callback
+    cms_pre_preview: $reblog::Reblog::CMS::cms_entry_preview_callback
+    CMSPostSave.entry: $reblog::Reblog::CMS::reblog_save
+    MT::Entry::pre_remove: $reblog::Reblog::Util::entry_preremove
+    Reblog::ReblogSourcefeed::pre_save: $reblog::Reblog::Util::sourcefeed_presave
+    Reblog::ReblogSourcefeed::post_save: $reblog::Reblog::Util::sourcefeed_postsave
+    Reblog::ReblogSourcefeed::pre_remove: $reblog::Reblog::Util::sourcefeed_preremove
+    post_init: $reblog::Reblog::Util::patch_rebuild_deleted_entry
+object_types:
+    entry:
+        reblog_reblogged: integer meta
+        reblog_lbl: string meta
+        reblog_anonymous: integer meta
+    ReblogData: Reblog::ReblogData
+    ReblogSourcefeed: Reblog::ReblogSourcefeed
+task_workers:
+    reblog_importer:
+        label: Import feeds to be reblogged
+        class: Reblog::Worker::Import
+upgrade_functions:
+    reblog_sourcefeed_label_load:
+        version_limit: 2.952
+        code: $reblog::Reblog::Util::sourcefeed_label_load
+    reblog_data_sourcefeedid_load:
+        version_limit: 2.92
+        code: $reblog::Reblog::Util::data_sourcefeedid_load
+    reblog_initialsourcefeed_load:
+        version_limit: 2.7
+        code: $reblog::Reblog::Util::initial_sourcefeed_load
+applications:
+    cms:
+        methods:
+            rb_blog_config: $reblog::Reblog::CMS::config
+            rb_view_sourcefeeds: $reblog::Reblog::CMS::list_sourcefeeds
+            rb_validate_json: $reblog::Reblog::CMS::validate_json
+            edit_sourcefeed: $reblog::Reblog::CMS::edit_sourcefeed
+            save_sourcefeed: $reblog::Reblog::CMS::save_sourcefeed
+            import_sourcefeeds: $reblog::Reblog::CMS::import_sourcefeeds
+        menus:
+            manage:reblog_settings:
+                label: Reblog
+                mode: rb_blog_config
+                order: 100001
+                view: blog
+                condition: $reblog::Reblog::CMS::menu_permission_reblog
+            manage:reblog_sourcefeeds:
+                label: Sourcefeeds
+                mode: rb_view_sourcefeeds
+                order: 100002
+                view: blog
+                condition: $reblog::Reblog::CMS::menu_permission_sourcefeeds
+tags:
+    function:
+        EntryReblogSource: $reblog::Reblog::Tags::_hdlr_entry_reblog_source
+        EntryReblogSourceLink: $reblog::Reblog::Tags::_hdlr_entry_reblog_source_url
+        EntryReblogSourceURL: $reblog::Reblog::Tags::_hdlr_entry_reblog_source_url
+        EntryReblogSourceLinkXML: $reblog::Reblog::Tags::_hdlr_entry_reblog_source_feed_url
+        EntryReblogSourceFeedURL: $reblog::Reblog::Tags::_hdlr_entry_reblog_source_feed_url
+        EntryReblogSourcefeedID: $reblog::Reblog::Tags::_hdlr_entry_reblog_sourcefeed_id
+        EntryReblogLink: $reblog::Reblog::Tags::_hdlr_entry_reblog_link
+        EntryReblogViaLink: $reblog::Reblog::Tags::_hdlr_entry_reblog_via_link
+        EntryReblogSourcePublishedDate: $reblog::Reblog::Tags::_hdlr_entry_reblog_orig_date
+        EntryReblogSourceAuthor: $reblog::Reblog::Tags::_hdlr_entry_reblog_source_author
+        EntryReblogAuthor: $reblog::Reblog::Tags::_hdlr_entry_reblog_source_author
+        EntryReblogIdentifier: $reblog::Reblog::Tags::_hdlr_entry_reblog_identifier
+        EntryReblogThumbnailLink: $reblog::Reblog::Tags::_hdlr_entry_reblog_thumbnail_link
+        EntryReblogThumbnailImg: $reblog::Reblog::Tags::_hdlr_entry_reblog_thumbnail_url
+        EntryReblogSourceTitle: $reblog::Reblog::Tags::_hdlr_entry_reblog_orig_source_title
+        EntryReblogAnnotation: $reblog::Reblog::Tags::_hdlr_entry_reblog_annotation
+        ReblogSourceFreq: $reblog::Reblog::Tags::_hdlr_reblog_source_freq
+        ReblogSourceId: $reblog::Reblog::Tags::_hdlr_reblog_source_id
+        ReblogSourceMinDate: $reblog::Reblog::Tags::_hdlr_reblog_source_min_date
+        ReblogSourceMaxDate: $reblog::Reblog::Tags::_hdlr_reblog_source_max_date
+        ReblogSourceTitle: $reblog::Reblog::Tags::_hdlr_reblog_source
+        ReblogSource: $reblog::Reblog::Tags::_hdlr_reblog_source
+        ReblogSourceXMLLink: $reblog::Reblog::Tags::_hdlr_reblog_source_feed_url
+        ReblogSourceFeedURL: $reblog::Reblog::Tags::_hdlr_reblog_source_feed_url
+        ReblogSourceLink: $reblog::Reblog::Tags::_hdlr_reblog_source_url
+        ReblogSourceURL: $reblog::Reblog::Tags::_hdlr_reblog_source_url
+        EntryReblogEnclosure: $reblog::Reblog::Tags::_hdlr_entry_reblog_enclosure
+        EntryReblogEnclosureLength: $reblog::Reblog::Tags::_hdlr_entry_reblog_enclosure_length
+        EntryReblogEnclosureMimetype: $reblog::Reblog::Tags::_hdlr_entry_reblog_enclosure_mimetype
+    block:
+        IfReblog?: $reblog::Reblog::Tags::_hdlr_if_reblog
+        IfNotReblog?: $reblog::Reblog::Tags::_hdlr_if_not_reblog
+        ReblogEntries: $reblog::Reblog::Tags::_hdlr_reblog_entries
+        ReblogSources: $reblog::Reblog::Tags::_hdlr_reblog_sources
+        ReblogEnclosureEntries: $reblog::Reblog::Tags::_hdlr_reblog_enclosure_entries
+        EntryIfHasReblogAuthor?: $reblog::Reblog::Tags::_hdlr_entry_if_has_reblog_author
+        EntryIfReblog?: $reblog::Reblog::Tags::_hdlr_entry_if_reblog

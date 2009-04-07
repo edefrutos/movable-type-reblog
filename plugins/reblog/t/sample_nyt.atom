@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?><feed
+  xmlns="http://www.w3.org/2005/Atom"
+  xmlns:thr="http://purl.org/syndication/thread/1.0"
+  xml:lang="en"
+  xml:base="http://open.blogs.nytimes.com/wp-atom.php"
+   >
+	<title type="text">Open</title>
+	<subtitle type="text">All the Code That's Fit to Print</subtitle>
+
+	<updated>2009-02-05T16:00:57Z</updated>
+	<generator uri="http://wordpress.org/" version="2.5.2-alpha">WordPress</generator>
+
+	<link rel="alternate" type="text/html" href="http://open.blogs.nytimes.com" />
+	<id>http://open.blogs.nytimes.com/feed/atom/</id>
+	<link rel="self" type="application/atom+xml" href="http://open.blogs.nytimes.com/feed/atom/" />
+
+			<logo>http://graphics8.nytimes.com/images/section/NytSectionHeader.gif</logo>		<entry>
+		<author>
+			<name>By Derek Gottfrid</name>
+					</author>
+		<title type="html"><![CDATA[Announcing the Article Search API]]></title>
+		<link rel="alternate" type="text/html" href="http://open.blogs.nytimes.com/2009/02/04/announcing-the-article-search-api/" />
+		<id>http://open.blogs.nytimes.com/?p=77</id>
+		<updated>2009-02-05T16:00:57Z</updated>
+		<published>2009-02-04T20:01:13Z</published>
+		<category scheme="http://open.blogs.nytimes.com" term="APIs" /><category scheme="http://open.blogs.nytimes.com" term="Open" /><category scheme="http://open.blogs.nytimes.com" term="Search" /><category scheme="http://open.blogs.nytimes.com" term="data" />		<summary type="html"><![CDATA[We are pleased to announce the initial release of The New York Times Article Search API.]]></summary>
+		<link rel="replies" type="text/html" href="http://open.blogs.nytimes.com/2009/02/04/announcing-the-article-search-api/#comments" thr:count="15"/>
+		<link rel="replies" type="application/atom+xml" href="http://open.blogs.nytimes.com/2009/02/04/announcing-the-article-search-api/feed/atom/" thr:count="15"/>
+		<thr:total>15</thr:total>
+	</entry>
+		<entry>
+		<author>
+			<name>By Paul Robbins</name>
+					</author>
+		<title type="html"><![CDATA[Announcing the Best Sellers API]]></title>
+		<link rel="alternate" type="text/html" href="http://open.blogs.nytimes.com/2009/01/27/announcing-the-best-sellers-api/" />
+		<id>http://open.blogs.nytimes.com/?p=75</id>
+		<updated>2009-01-28T15:41:56Z</updated>
+		<published>2009-01-27T17:16:23Z</published>
+		<category scheme="http://open.blogs.nytimes.com" term="APIs" />		<summary type="html"><![CDATA[With the Best Sellers API, you can get data from all New York Times Best Seller lists.]]></summary>
+		<link rel="replies" type="text/html" href="http://open.blogs.nytimes.com/2009/01/27/announcing-the-best-sellers-api/#comments" thr:count="0"/>
+		<link rel="replies" type="application/atom+xml" href="http://open.blogs.nytimes.com/2009/01/27/announcing-the-best-sellers-api/feed/atom/" thr:count="0"/>
+		<thr:total>0</thr:total>
+	</entry>
+		<entry>
+		<author>
+			<name>By Derek Gottfrid</name>
+					</author>
+		<title type="html"><![CDATA[Mark Your Calendars: Times Open, Feb. 20]]></title>
+		<link rel="alternate" type="text/html" href="http://open.blogs.nytimes.com/2009/01/21/mark-your-calendars-times-open-feb-20/" />
+		<id>http://open.blogs.nytimes.com/?p=71</id>
+		<updated>2009-01-21T16:24:36Z</updated>
+		<published>2009-01-21T15:46:32Z</published>
+		<category scheme="http://open.blogs.nytimes.com" term="APIs" /><category scheme="http://open.blogs.nytimes.com" term="Conferences" /><category scheme="http://open.blogs.nytimes.com" term="Projects" /><category scheme="http://open.blogs.nytimes.com" term="api" /><category scheme="http://open.blogs.nytimes.com" term="conference" /><category scheme="http://open.blogs.nytimes.com" term="journalism" /><category scheme="http://open.blogs.nytimes.com" term="nytimes" /><category scheme="http://open.blogs.nytimes.com" term="Search" />		<summary type="html"><![CDATA[Announcing Times Open, a day-long event for developers on Feb. 20.]]></summary>
+		<link rel="replies" type="text/html" href="http://open.blogs.nytimes.com/2009/01/21/mark-your-calendars-times-open-feb-20/#comments" thr:count="1"/>
+		<link rel="replies" type="application/atom+xml" href="http://open.blogs.nytimes.com/2009/01/21/mark-your-calendars-times-open-feb-20/feed/atom/" thr:count="1"/>
+		<thr:total>1</thr:total>
+	</entry>
+		<entry>
+		<author>
+			<name>By Jacob Harris</name>
+					</author>
+		<title type="html"><![CDATA[Fatten Up Your Corpus]]></title>
+		<link rel="alternate" type="text/html" href="http://open.blogs.nytimes.com/2009/01/12/fatten-up-your-corpus/" />
+		<id>http://open.blogs.nytimes.com/?p=65</id>
+		<updated>2009-01-12T16:45:49Z</updated>
+		<published>2009-01-12T16:45:49Z</published>
+		<category scheme="http://open.blogs.nytimes.com" term="Open" /><category scheme="http://open.blogs.nytimes.com" term="data" /><category scheme="http://open.blogs.nytimes.com" term="content" /><category scheme="http://open.blogs.nytimes.com" term="metadata" /><category scheme="http://open.blogs.nytimes.com" term="research" />		<summary type="html"><![CDATA[Available for noncommercial research license from <a href="http://ldc.upenn.edu">The Linguistic Data Consortium</a> (LDC), the corpus spans 20 years of the <em>New York Times</em> between 1987 and 2007 (that's 7,475 issues, to be exact).  This collection includes the text of 1.8 million articles written at The Times. Of these, more than 1.5 million have been manually annotated by <a href="http://query.nytimes.com/gst/fullpage.html?res=990CE7DF123BF934A25752C1A9679C8B63&#038;n=Top/Reference/Times%20Topics/People/O/Ochs,%20Adolph%20S.">The New York Times Index</a> with distinct tags for people, places, topics and organizations drawn from a controlled vocabulary. A further 650,000 articles also include summaries written by indexers from the New York Times Index. The corpus is provided as a collection of XML documents in the <a href="http://www.nitf.org">News Industry Text Format</a> and includes open source Java tools for parsing documents into memory resident objects.]]></summary>
+		<link rel="replies" type="text/html" href="http://open.blogs.nytimes.com/2009/01/12/fatten-up-your-corpus/#comments" thr:count="6"/>
+		<link rel="replies" type="application/atom+xml" href="http://open.blogs.nytimes.com/2009/01/12/fatten-up-your-corpus/feed/atom/" thr:count="6"/>
+		<thr:total>6</thr:total>
+	</entry>
+		<entry>
+		<author>
+			<name>By Andrei Scheinkman and Derek Willis</name>
+					</author>
+		<title type="html"><![CDATA[Announcing the Congress API]]></title>
+		<link rel="alternate" type="text/html" href="http://open.blogs.nytimes.com/2009/01/08/introducing-the-congress-api/" />
+		<id>http://open.blogs.nytimes.com/?p=69</id>
+		<updated>2009-01-08T20:48:37Z</updated>
+		<published>2009-01-08T18:13:47Z</published>
+		<category scheme="http://open.blogs.nytimes.com" term="APIs" /><category scheme="http://open.blogs.nytimes.com" term="api" /><category scheme="http://open.blogs.nytimes.com" term="congress" /><category scheme="http://open.blogs.nytimes.com" term="politics" />		<summary type="html"><![CDATA[On Tuesday, members of the 111th Congress convened in Washington. Over the next two years, the 535 men and women of the House and Senate will introduce, consider and vote on a range of issues, from an economic stimulus package to confirmation of President-elect Barack Obama's cabinet nominees. So it's an appropriate time to announce [...]]]></summary>
+		<link rel="replies" type="text/html" href="http://open.blogs.nytimes.com/2009/01/08/introducing-the-congress-api/#comments" thr:count="8"/>
+		<link rel="replies" type="application/atom+xml" href="http://open.blogs.nytimes.com/2009/01/08/introducing-the-congress-api/feed/atom/" thr:count="8"/>
+		<thr:total>8</thr:total>
+	</entry>
+		<entry>
+		<author>
+			<name>By Andrei Scheinkman and Derek Willis</name>
+						<uri>http://blogs.nytimes.com</uri>
+					</author>
+		<title type="html"><![CDATA[Represent]]></title>
+		<link rel="alternate" type="text/html" href="http://open.blogs.nytimes.com/2008/12/22/represent/" />
+		<id>http://open.blogs.nytimes.com/?p=63</id>
+		<updated>2008-12-22T20:56:42Z</updated>
+		<published>2008-12-22T18:24:57Z</published>
+		<category scheme="http://open.blogs.nytimes.com" term="Projects" /><category scheme="http://open.blogs.nytimes.com" term="api" /><category scheme="http://open.blogs.nytimes.com" term="django" /><category scheme="http://open.blogs.nytimes.com" term="geodjango" /><category scheme="http://open.blogs.nytimes.com" term="politics" /><category scheme="http://open.blogs.nytimes.com" term="postgis" /><category scheme="http://open.blogs.nytimes.com" term="python" />		<summary type="html"><![CDATA[More than eight million people live in the five boroughs of New York City. They have more than 150 elected legislative representatives, from the local level to Congress. Keeping tabs on the people who represent you is a difficult task.
+
+That's the idea behind Represent, an interactive feature we launched in beta last week. Using your [...]]]></summary>
+		<link rel="replies" type="text/html" href="http://open.blogs.nytimes.com/2008/12/22/represent/#comments" thr:count="9"/>
+		<link rel="replies" type="application/atom+xml" href="http://open.blogs.nytimes.com/2008/12/22/represent/feed/atom/" thr:count="9"/>
+		<thr:total>9</thr:total>
+	</entry>
+		<entry>
+		<author>
+			<name>By Marci Windsheimer</name>
+					</author>
+		<title type="html"><![CDATA[Now Playing on Your Android Phone]]></title>
+		<link rel="alternate" type="text/html" href="http://open.blogs.nytimes.com/2008/12/22/now-playing-on-your-android-phone/" />
+		<id>http://open.blogs.nytimes.com/?p=67</id>
+		<updated>2008-12-22T16:53:51Z</updated>
+		<published>2008-12-22T16:53:51Z</published>
+		<category scheme="http://open.blogs.nytimes.com" term="APIs" /><category scheme="http://open.blogs.nytimes.com" term="Android" /><category scheme="http://open.blogs.nytimes.com" term="api" /><category scheme="http://open.blogs.nytimes.com" term="ec2" /><category scheme="http://open.blogs.nytimes.com" term="Google" /><category scheme="http://open.blogs.nytimes.com" term="mobile" /><category scheme="http://open.blogs.nytimes.com" term="XML" />		<summary type="html"><![CDATA[Philip K. Dick wondered whether androids dream of electric sheep. We don't know the answer to that one, but we do know what Android developers dream of: XML and New York Times movie reviews. Or at least one particular developer does. Jacek Ambroziak, an XML expert and avid reader of The Times, has created an [...]]]></summary>
+		<link rel="replies" type="text/html" href="http://open.blogs.nytimes.com/2008/12/22/now-playing-on-your-android-phone/#comments" thr:count="0"/>
+		<link rel="replies" type="application/atom+xml" href="http://open.blogs.nytimes.com/2008/12/22/now-playing-on-your-android-phone/feed/atom/" thr:count="0"/>
+		<thr:total>0</thr:total>
+	</entry>
+		<entry>
+		<author>
+			<name>By Justin Sheckler</name>
+						<uri>http://blogs.nytimes.com</uri>
+					</author>
+		<title type="html"><![CDATA[Movie Reviews API Update: More Search Options]]></title>
+		<link rel="alternate" type="text/html" href="http://open.blogs.nytimes.com/2008/11/11/movie-reviews-api-update-more-search-options/" />
+		<id>http://open.blogs.nytimes.com/2008/11/11/movie-reviews-api-update-more-search-options/</id>
+		<updated>2008-11-11T20:43:27Z</updated>
+		<published>2008-11-11T20:18:05Z</published>
+		<category scheme="http://open.blogs.nytimes.com" term="APIs" /><category scheme="http://open.blogs.nytimes.com" term="api" />		<summary type="html"><![CDATA[Today the Movie Reviews API is getting an update.  The main attraction is more search options:
+
+Exact title match
+Publication and opening date (either a single date or a range)
+NYT Reviewer
+NYT Critics' Picks including the Best 1,000 Movies of All Time
+Whether or not the movie is released on DVD
+
+All of these search features can be combined [...]]]></summary>
+		<link rel="replies" type="text/html" href="http://open.blogs.nytimes.com/2008/11/11/movie-reviews-api-update-more-search-options/#comments" thr:count="0"/>
+		<link rel="replies" type="application/atom+xml" href="http://open.blogs.nytimes.com/2008/11/11/movie-reviews-api-update-more-search-options/feed/atom/" thr:count="0"/>
+		<thr:total>0</thr:total>
+	</entry>
+		<entry>
+		<author>
+			<name>By Ben Gerst</name>
+						<uri>http://blogs.nytimes.com</uri>
+					</author>
+		<title type="html"><![CDATA[Announcing the New York Times Community API]]></title>
+		<link rel="alternate" type="text/html" href="http://open.blogs.nytimes.com/2008/10/30/announcing-the-new-york-times-community-api/" />
+		<id>http://open.blogs.nytimes.com/2008/10/30/announcing-the-new-york-times-community-api/</id>
+		<updated>2008-10-31T02:16:01Z</updated>
+		<published>2008-10-30T22:14:47Z</published>
+		<category scheme="http://open.blogs.nytimes.com" term="APIs" /><category scheme="http://open.blogs.nytimes.com" term="api" /><category scheme="http://open.blogs.nytimes.com" term="community" />		<summary type="html"><![CDATA[Happy Birthday to us! We launched comments on articles one year ago today. So it's only fitting - and with much excitement - that we announce the launch of the New York Times Community API, which allows you to access comments in several ways.
+The first article ever to feature comments was in the Opinion section [...]]]></summary>
+		<link rel="replies" type="text/html" href="http://open.blogs.nytimes.com/2008/10/30/announcing-the-new-york-times-community-api/#comments" thr:count="23"/>
+		<link rel="replies" type="application/atom+xml" href="http://open.blogs.nytimes.com/2008/10/30/announcing-the-new-york-times-community-api/feed/atom/" thr:count="23"/>
+		<thr:total>23</thr:total>
+	</entry>
+		<entry>
+		<author>
+			<name>By Justin Sheckler</name>
+						<uri>http://blogs.nytimes.com</uri>
+					</author>
+		<title type="html"><![CDATA[Announcing the Movie Reviews API]]></title>
+		<link rel="alternate" type="text/html" href="http://open.blogs.nytimes.com/2008/10/28/announcing-the-movie-reviews-api/" />
+		<id>http://open.blogs.nytimes.com/2008/10/28/announcing-the-movie-reviews-api/</id>
+		<updated>2008-10-30T13:07:45Z</updated>
+		<published>2008-10-28T20:58:27Z</published>
+		<category scheme="http://open.blogs.nytimes.com" term="APIs" /><category scheme="http://open.blogs.nytimes.com" term="api" />		<summary type="html"><![CDATA[Today we're launching the Movie Reviews API, a new way to access over 22,000 New York Times movie reviews going all the way back to 1924.
+One of the challenges we've faced with our new Developer Network is how to present our article content in a way that complements, rather than duplicates, traditional RSS feeds. In [...]]]></summary>
+		<link rel="replies" type="text/html" href="http://open.blogs.nytimes.com/2008/10/28/announcing-the-movie-reviews-api/#comments" thr:count="6"/>
+		<link rel="replies" type="application/atom+xml" href="http://open.blogs.nytimes.com/2008/10/28/announcing-the-movie-reviews-api/feed/atom/" thr:count="6"/>
+		<thr:total>6</thr:total>
+	</entry>
+		<entry>
+		<author>
+			<name>By Marc Frons</name>
+						<uri>http://blogs.nytimes.com</uri>
+					</author>
+		<title type="html"><![CDATA[The New York Times Data Visualization Lab]]></title>
+		<link rel="alternate" type="text/html" href="http://open.blogs.nytimes.com/2008/10/27/the-new-york-times-data-visualization-lab/" />
+		<id>http://open.blogs.nytimes.com/2008/10/27/the-new-york-times-data-visualization-lab/</id>
+		<updated>2008-10-27T19:04:52Z</updated>
+		<published>2008-10-27T18:45:16Z</published>
+		<category scheme="http://open.blogs.nytimes.com" term="Uncategorized" /><category scheme="http://open.blogs.nytimes.com" term="community" /><category scheme="http://open.blogs.nytimes.com" term="data viz" /><category scheme="http://open.blogs.nytimes.com" term="visualization" />		<summary type="html"><![CDATA[Almost a year ago, NYTimes.com launched a new platform that gave our readers the ability to post comments on our articles. While hardly a new idea, it was an important step for The Times - a belief that our journalism could be enhanced through the views of our readers. Since then, we've established a vibrant [...]]]></summary>
+		<link rel="replies" type="text/html" href="http://open.blogs.nytimes.com/2008/10/27/the-new-york-times-data-visualization-lab/#comments" thr:count="2"/>
+		<link rel="replies" type="application/atom+xml" href="http://open.blogs.nytimes.com/2008/10/27/the-new-york-times-data-visualization-lab/feed/atom/" thr:count="2"/>
+		<thr:total>2</thr:total>
+	</entry>
+		<entry>
+		<author>
+			<name>By Marci Windsheimer</name>
+						<uri>http://blogs.nytimes.com</uri>
+					</author>
+		<title type="html"><![CDATA[Announcing the TimesTags API]]></title>
+		<link rel="alternate" type="text/html" href="http://open.blogs.nytimes.com/2008/10/21/announcing-the-timestags-api/" />
+		<id>http://open.blogs.nytimes.com/2008/10/21/announcing-the-timestags-api/</id>
+		<updated>2008-10-22T13:10:40Z</updated>
+		<published>2008-10-21T21:39:26Z</published>
+		<category scheme="http://open.blogs.nytimes.com" term="APIs" /><category scheme="http://open.blogs.nytimes.com" term="api" /><category scheme="http://open.blogs.nytimes.com" term="metadata" /><category scheme="http://open.blogs.nytimes.com" term="open projects" /><category scheme="http://open.blogs.nytimes.com" term="Search" />		<summary type="html"><![CDATA[Today we're releasing the TimesTags API, which is the gateway to a lush garden of Times metadata. What's so great about metadata? Well, you've probably heard that "information wants to be free." But even more than that, information wants to be found. And metadata - data about the data - improves findability. 
+As our own [...]]]></summary>
+		<link rel="replies" type="text/html" href="http://open.blogs.nytimes.com/2008/10/21/announcing-the-timestags-api/#comments" thr:count="2"/>
+		<link rel="replies" type="application/atom+xml" href="http://open.blogs.nytimes.com/2008/10/21/announcing-the-timestags-api/feed/atom/" thr:count="2"/>
+		<thr:total>2</thr:total>
+	</entry>
+		<entry>
+		<author>
+			<name>By Derek Willis</name>
+						<uri>http://blogs.nytimes.com</uri>
+					</author>
+		<title type="html"><![CDATA[Announcing the New York Times Campaign Finance API]]></title>
+		<link rel="alternate" type="text/html" href="http://open.blogs.nytimes.com/2008/10/14/announcing-the-new-york-times-campaign-finance-api/" />
+		<id>http://open.blogs.nytimes.com/2008/10/14/announcing-the-new-york-times-campaign-finance-api/</id>
+		<updated>2008-10-22T14:51:05Z</updated>
+		<published>2008-10-14T21:10:58Z</published>
+		<category scheme="http://open.blogs.nytimes.com" term="Uncategorized" /><category scheme="http://open.blogs.nytimes.com" term="api" /><category scheme="http://open.blogs.nytimes.com" term="open projects" /><category scheme="http://open.blogs.nytimes.com" term="politics" />		<summary type="html"><![CDATA[When we first started talking about creating and releasing APIs for databases collected by The Times, campaign finance data from the Federal Election Commission was a natural choice. The upcoming presidential election has seen record fund-raising by the candidates and a host of new donors. Now we want our users to be able to analyze [...]]]></summary>
+		<link rel="replies" type="text/html" href="http://open.blogs.nytimes.com/2008/10/14/announcing-the-new-york-times-campaign-finance-api/#comments" thr:count="8"/>
+		<link rel="replies" type="application/atom+xml" href="http://open.blogs.nytimes.com/2008/10/14/announcing-the-new-york-times-campaign-finance-api/feed/atom/" thr:count="8"/>
+		<thr:total>8</thr:total>
+	</entry>
+		<entry>
+		<author>
+			<name>By Derek Gottfrid</name>
+						<uri>http://blogs.nytimes.com</uri>
+					</author>
+		<title type="html"><![CDATA[Enriching Search: Auto-Suggest in IE8]]></title>
+		<link rel="alternate" type="text/html" href="http://open.blogs.nytimes.com/2008/10/06/enriching-search-auto-suggest-in-ie8/" />
+		<id>http://open.blogs.nytimes.com/2008/10/06/enriching-search-auto-suggest-in-ie8/</id>
+		<updated>2008-10-08T21:29:20Z</updated>
+		<published>2008-10-06T15:33:32Z</published>
+		<category scheme="http://open.blogs.nytimes.com" term="Uncategorized" />		<summary type="html"><![CDATA[Back in August, Microsoft rolled out the Beta 2 release of Internet Explorer 8. And we released a Times search plug-in right along with it. We had already released a plug-in for Firefox and IE7, but IE8 has some new features that can make a search plug-in really sing.  
+Here at The Times, we [...]]]></summary>
+		<link rel="replies" type="text/html" href="http://open.blogs.nytimes.com/2008/10/06/enriching-search-auto-suggest-in-ie8/#comments" thr:count="3"/>
+		<link rel="replies" type="application/atom+xml" href="http://open.blogs.nytimes.com/2008/10/06/enriching-search-auto-suggest-in-ie8/feed/atom/" thr:count="3"/>
+		<thr:total>3</thr:total>
+	</entry>
+		<entry>
+		<author>
+			<name>By Benjamin Kudria</name>
+						<uri>http://blogs.nytimes.com</uri>
+					</author>
+		<title type="html"><![CDATA[Summer Internship Wrap-Up]]></title>
+		<link rel="alternate" type="text/html" href="http://open.blogs.nytimes.com/2008/09/12/summer-intership-wrap-up/" />
+		<id>http://open.blogs.nytimes.com/2008/09/12/summer-intership-wrap-up/</id>
+		<updated>2008-09-15T18:19:18Z</updated>
+		<published>2008-09-12T21:12:23Z</published>
+		<category scheme="http://open.blogs.nytimes.com" term="Uncategorized" />		<summary type="html"><![CDATA[I spent this past summer programming for The New York Times. The experience was valuable in a number of ways, and I really enjoyed myself. Here's how it went down.
+Sometime in March, I saw a post on The Times's Open blog, which is dedicated to technical topics and written by developers - not suits. The [...]]]></summary>
+		<link rel="replies" type="text/html" href="http://open.blogs.nytimes.com/2008/09/12/summer-intership-wrap-up/#comments" thr:count="1"/>
+		<link rel="replies" type="application/atom+xml" href="http://open.blogs.nytimes.com/2008/09/12/summer-intership-wrap-up/feed/atom/" thr:count="1"/>
+		<thr:total>1</thr:total>
+	</entry>
+	</feed>

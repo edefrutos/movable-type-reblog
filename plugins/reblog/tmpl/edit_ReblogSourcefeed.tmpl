@@ -1,0 +1,183 @@
+<mt:setvarblock name="page_title"><__trans phrase="Edit Sourcefeed"></mt:setvarblock>
+<$mt:setvar name="position_actions_bottom" value="1"$>
+
+<mt:if name="id">
+<mt:setvarblock name="object_nav">
+<ul class="object-nav">
+    <li><a href="<$mt:var name="script_url"$>?__mode=rb_view_sourcefeeds&amp;blog_id=<$mt:var name="blog_id"$>"><__trans phrase="Manage [_1]" params="<$mt:var name="object_label_plural"$>"></a></li>
+</ul>
+</mt:setvarblock>
+</mt:if>
+
+<mt:setvarblock name="system_msg">
+<mt:if name="saved">
+    <mtapp:statusmsg
+        id="saved"
+        class="success">
+        <__trans phrase="Your changes have been saved.">
+    </mtapp:statusmsg>
+</mt:if>
+</mt:setvarblock>
+
+<mt:setvarblock name="html_head" append="1">
+<style>
+span#validation-report { font-size: 16pt; }
+span#validation-report.good { background-color: green; }
+span#validation-report.bad { background-color: red; }
+</style>
+<script type="text/javascript" src="<$mt:var name="static_uri"$>js/tc/client.js?v=<mt:var name="mt_version_id" escape="url">"></script>
+<script type="text/javascript" src="<$mt:var name="static_uri"$>js/common/JSON.js?v=<mt:var name="mt_version_id" escape="url">"></script>
+<script>
+var validate_base = 'Validation check has not been run.';
+var validate_loading = 'Running validation...';
+var validate_success = 'Feed validated.';
+var validate_failure = 'Feed failed validation.';
+function validateFeed() {
+    if (!TC.Client) return;
+	hide('reblog');
+	url = document.getElementById('url').value;
+	reporting = document.getElementById('validation-report');
+	reporting.className = '';
+	reporting.innerHTML = validate_loading;
+	var args = new Array();
+    args['json'] = '1';
+    TC.Client.call({
+        'load': function(c) { validateFeedCallback(c); },
+        'error': function() { reporting.innerHTML = validate_base; showMsg("Error calling feed validation function", "reblog", "alert"); show('reblog'); },
+        'method': 'GET',
+        'uri': ScriptURI + '?__mode=rb_validate_json&blog_id=<mt:var name="blog_id">&sourcefeed=' + url,
+        'arguments': args
+	    });
+}
+
+function validateFeedCallback(c) {
+	reporting = document.getElementById('validation-report');
+    try {
+        result = eval('(' + c.responseText + ')');
+    } catch(e) {
+		reporting.className = '';
+		reporting.innerHTML = validate_base;
+		showMsg("Error calling feed validation function", "reblog", "alert");
+		show('reblog'); 
+        return;
+    }
+	if( result.success ) {
+		reporting.className = 'good';
+		reporting.innerHTML = validate_success;
+		if ( result.errstr ) {
+			showMsg(result.errstr, "reblog", "alert");
+		}
+	} else {
+		reporting.className = 'bad';
+		reporting.innerHTML = validate_failure;
+		showMsg(result.errstr, "reblog", "alert");
+		show('reblog'); 
+	}
+}
+
+function validateForm() {
+	document.getElementById('url').value = document.getElementById('url').value.replace(/^\s*/, '').replace(/\s*$/, '');
+	document.getElementById('label').value = document.getElementById('label').value.replace(/^\s*/, '').replace(/\s*$/, '');
+	if ( ! document.getElementById('url').value ) {
+		alert('Please enter a URL');
+		return 0;
+	}
+	return 1;
+}
+
+</script>
+</mt:setvarblock>
+
+<mt:setvarblock name="form_header">
+<form method="post" action="<mt:var name="script_url">" onsubmit="return validateForm(this)">
+    <input type="hidden" name="blog_id" value="<mt:var name="blog_id">" />
+    <input type="hidden" name="__mode" value="save_sourcefeed" />
+    <input type="hidden" name="_type" value="<mt:var name="object_type">" />
+    <input type="hidden" name="id" value="<mt:var name="id">" />
+    <input type="hidden" name="return_args" value="<mt:var name="return_args" escape="html">" />
+    <input type="hidden" name="magic_token" value="<mt:var name="magic_token">" />
+    <input type="hidden" name="order" value="<mt:var name="order">" />
+</mt:setvarblock>
+<mt:setvartemplate name="action_buttons">
+    <button
+        type="submit"
+        accesskey="s"
+        title="<__trans phrase="Save changes to this [_1] (s)" params="<mt:var name="object_label" lower_case="1">">"
+        class="primary-button"
+        ><__trans phrase="Save Changes"></button>
+</mt:setvartemplate>
+
+<mt:include name="include/header.tmpl" id="header_include">
+
+    <mt:include name="include/actions_bar.tmpl" hide_pager="1">
+
+<fieldset>
+<mtapp:setting
+    id="label"
+    label="<__trans phrase="Label">">
+    <div class="textarea-wrapper">
+        <input type="text" name="label" id="label" class="full-width" maxlength="100" value="<mt:var name="label" escape="html">" class="wide" />
+    </div>
+</mtapp:setting>
+</fieldset>
+
+<fieldset>
+<mtapp:setting
+    id="url"
+    label="<__trans phrase="URL">">
+    <div class="textarea-wrapper">
+        <input type="text" name="url" id="url" class="full-width" maxlength="255" value="<mt:var name="url" escape="html">" class="wide" />
+    </div>
+</mtapp:setting>
+</fieldset>
+
+<fieldset>
+<mtapp:setting
+    id="is_active"
+    label="<__trans phrase="Active">">
+        <input type="checkbox" name="is_active" id="is_active" value="1" <mt:if name="is_active">checked="checked"</mt:if>/>
+</mtapp:setting>
+</fieldset>
+
+<fieldset>
+<mtapp:setting
+    id="is_excerpted"
+    label="<__trans phrase="Use excerpts">">
+        <input type="checkbox" name="is_excerpted" id="is_excerpted" value="1" <mt:if name="is_excerpted">checked="checked"</mt:if>/>
+</mtapp:setting>
+</fieldset>
+
+<fieldset>
+	<mtapp:setting
+	    id="clear_errors"
+	    label="<__trans phrase="Clear Errors">">
+	        <input type="checkbox" name="clear_errors" value="1" id="clear_errors" />
+	</mtapp:setting>
+</fieldset>
+
+<fieldset>
+<div id="clear_errors-field" class="field field-left-label pkg">
+<div class="field-inner">
+<div class="field-header">
+<label for="validate_button">Validate</label>
+</div>
+<div class="field-content">
+<button
+	id="validate_button"
+    type="button"
+    title="Validate"
+    class="big-button"
+	onclick="validateFeed();"
+    >Validate</button>
+<p id="msg-block"><span id="validation-report">Validation check has not been run.</span></p>
+</div>
+</div>
+</div>
+</fieldset>
+
+<mt:include name="include/actions_bar.tmpl" bar_position="bottom" hide_pager="1">
+<mt:setvarblock name="form_footer">
+</form>
+</mt:setvarblock>
+
+<mt:include name="include/footer.tmpl">

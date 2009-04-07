@@ -1,0 +1,53 @@
+<div id="reblog-panel-off" style="padding: 10px 0 10px 15px; background-color: #FAFCFF; border: 1px solid #CDD4EB;">
+    <p><a href="javascript:var off = document.getElementById('reblog-panel-off').style.display = 'none'; var on = document.getElementById('reblog-panel').style.display = '';">Show Reblog Details</a>
+</div>
+<div id="reblog-panel" style="padding: 10px 0 10px 15px; background-color: #FAFCFF; border: 1px solid #C5D4EB; display: none;">
+<div class="field">
+        <div class="field-header">
+                <label for="annotation">Annotation</label>
+        </div>
+        <div class="field-wrapper">
+                <input type="text" name="annotation" id="annotation" value="<TMPL_VAR NAME=ANNOTATION ESCAPE=HTML>" size="50" />
+    </div>
+</div>
+<div class="field">
+        <div class="field-header">
+                <label for="source-title">Source Title</label>
+        </div>
+        <div class="field-wrapper">
+                <input type="text" name="source_title" id="source-title" value="<TMPL_VAR NAME=SOURCE_TITLE ESCAPE=HTML>" size="50" />
+        </div>
+</div>
+<div class="field">
+        <div class="field-header">
+                <label for="source-link">Source Link</label>
+        </div>
+        <div class="field-wrapper"><input type="text" name="source_link" id="source-link" value="<TMPL_VAR NAME=SOURCE_LINK ESCAPE=HTML>" size="50" /></div>
+</div>
+<div class="field">
+        <div class="field-header">
+                <label for="via">Via</label>
+        </div>
+        <div class="field-wrapper"><input type="text" name="via_link" id="via" value="<TMPL_VAR NAME=VIA_LINK ESCAPE=HTML>" size="50" /></div>
+</div>
+<div class="field">
+        <div class="field-header">
+                <label for="thumbnail-url">Thumbnail Img URL</label>
+        </div>
+        <div class="field-wrapper"><input type="text" name="thumbnail_url" id="thumbnail-url" value="<TMPL_VAR NAME=THUMBNAIL_URL ESCAPE=HTML>" size="50" /></div>
+</div>
+<div class="field">
+                <div class="field-header">
+                        <label for="thumbnail-link">Thumbnail Link</label>
+                </div>
+                <div class="field-wrapper"><input type="text" name="thumbnail_link" id="thumbnail-link" value="<TMPL_VAR NAME=THUMBNAIL_LINK ESCAPE=HTML>" size="50" /></div>
+</div>
+<div class="field">
+        <div class="field-header">
+                <label for="enclosure">Enclosure URL</label>
+        </div>
+        <div class="field-wrapper"><input type="text" name="enclosure_url" id="enclosure" value="<TMPL_VAR NAME=ENCLOSURE_URL ESCAPE=HTML>" size="50" /></div>
+</div>
+<input type="hidden" name="reblog_manual_edit" value="1" />
+<p><a href="javascript:var off = document.getElementById('reblog-panel').style.display = 'none'; var on = document.getElementById('reblog-panel-off').style.display = '';">Hide Reblog Details</a>
+</div>

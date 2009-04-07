@@ -1,0 +1,116 @@
+<mt:setvarblock name="page_title"><__trans phrase="Configure Reblog"></mt:setvarblock>
+<$mt:setvar name="position_actions_bottom" value="1"$>
+
+<mt:setvartemplate name="action_buttons">
+    <button
+        type="submit"
+        accesskey="s"
+        title="<__trans phrase="Save changes to Reblog settings">"
+        class="primary-button"
+        ><__trans phrase="Save Changes"></button>
+</mt:setvartemplate>
+
+<mt:setvarblock name="system_msg">
+<mt:if name="saved">
+    <mtapp:statusmsg
+        id="saved"
+        class="success">
+        <__trans phrase="Your changes have been saved.">
+    </mtapp:statusmsg>
+</mt:if>
+</mt:setvarblock>
+
+<mt:setvarblock name="html_head" append="1"></mt:setvarblock>
+
+<mt:include name="include/header.tmpl" id="header_include">
+
+<form method="post" action="<mt:var name="script_url">" onsubmit="return validateForm(this)">
+    <input type="hidden" name="blog_id" value="<mt:var name="blog_id">" />
+    <input type="hidden" name="__mode" value="rb_blog_config" />
+    <input type="hidden" name="save" value="1" />
+    <input type="hidden" name="magic_token" value="<mt:var name="magic_token">" />
+
+<fieldset>
+	<mtapp:setting
+	    id="display_entry_details"
+	    label="<__trans phrase="Display Editor">"
+		hint="Provide an 'edit reblog details' interface on the edit entry screen"
+		show_hint="1">
+		<select name="display_entry_details" id="display_entry_details">
+		<option value="1"<mt:if var="display_entry_details"> selected="selected"</mt:if>>Yes</option>
+		<option value="0"<mt:unless var="display_entry_details"> selected="selected"</mt:unless>>No</option>
+		</select>
+	</mtapp:setting>
+</fieldset>
+
+<fieldset>
+	<mtapp:setting
+	    id="reblog_author"
+	    label="<__trans phrase="Reblog Author">"
+		hint="Author assigned to posts loaded by Reblog"
+		show_hint="1" >
+		<select name="reblog_author" id="reblog_author">
+		<option value="0">no default author</option>
+		<mt:loop name="author_loop">
+		<option value="<$mt:var name="author_id"$>"<mt:if var="author_id" eq="$default_author_id"> selected="selected"</mt:if>><$mt:var name="author_name" escape="html"$></option>
+		</mt:loop>
+		</select>
+	</mtapp:setting>
+</fieldset>
+
+<fieldset>
+	<mtapp:setting
+	    id="frequency"
+	    label="<__trans phrase="Load Frequency">"
+		hint="How often feeds for this blog are reloaded; default is every 12 hours"
+		show_hint="1">
+		<select name="frequency" id="frequency">
+<mt:loop var="frequency_loop">
+		<option value="<$mt:var name="seconds"$>"<mt:if var="seconds" eq="$default_frequency"> selected="selected"</mt:if>><$mt:var name="frequency"$></option>
+</mt:loop>
+		</select>
+	</mtapp:setting>
+</fieldset>
+
+<fieldset>
+	<mtapp:setting
+	    id="max_failures"
+	    label="<__trans phrase="Failed Load Threshhold">"
+		hint="After this many consecutive failures to load a given feed, the feed will be disabled; default is 5 failures."
+		show_hint="1">
+		<input type="text" name="max_failures" id="max_failures" value="<$mt:var name="default_max_failures" escape="html"$>" />
+	</mtapp:setting>
+</fieldset>
+
+<fieldset>
+	<mtapp:setting
+	    id="import_categories"
+	    label="<__trans phrase="Import Categories">"
+		hint="Preserve categories found in imported entries"
+		show_hint="1">
+		<select name="import_categories" id="import_categories">
+		<option value="1"<mt:if var="import_categories"> selected="selected"</mt:if>>Yes</option>
+		<option value="0"<mt:unless var="import_categories"> selected="selected"</mt:unless>>No</option>
+		</select>
+	</mtapp:setting>
+</fieldset>
+
+<fieldset>
+	<mtapp:setting
+	    id="rebuild_individual"
+	    label="<__trans phrase="Rebuild Individual Archives">"
+		hint="Build individual archive for each new entry after importing"
+		show_hint="1">
+		<select name="rebuild_individual" id="rebuild_individual">
+		<option value="1"<mt:if var="rebuild_individual"> selected="selected"</mt:if>>Yes</option>
+		<option value="0"<mt:unless var="rebuild_individual"> selected="selected"</mt:unless>>No</option>
+		</select>
+	</mtapp:setting>
+</fieldset>
+
+<mt:include name="include/actions_bar.tmpl" bar_position="bottom" hide_pager="1">
+<mt:setvarblock name="form_footer">
+</form>
+</mt:setvarblock>
+
+<mt:include name="include/footer.tmpl">

@@ -1,0 +1,18 @@
+<mt:setvarblock name="page_title"><__trans phrase="Reblog Import"></mt:setvarblock>
+<$mt:setvar name="position_actions_bottom" value="1"$>
+
+<mt:setvarblock name="object_nav">
+<ul class="object-nav">
+    <li><a href="<$mt:var name="script_url"$>?__mode=rb_view_sourcefeeds&amp;blog_id=<$mt:var name="blog_id"$>"><__trans phrase="Manage [_1]" params="Sourcefeeds"></a></li>
+</ul>
+</mt:setvarblock>
+
+<mt:setvarblock name="html_head" append="1"></mt:setvarblock>
+
+<mt:include name="include/header.tmpl" id="header_include">
+
+<h2>Reblog Import</h2>
+
+<p><$mt:var name="reblog_message" escape="html"$></p>
+
+<mt:include name="include/footer.tmpl">

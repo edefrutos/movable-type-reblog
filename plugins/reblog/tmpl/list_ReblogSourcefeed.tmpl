@@ -1,0 +1,99 @@
+<mt:setvarblock name="page_title"><__trans phrase="Manage Sourcefeeds"></mt:setvarblock>
+
+<mt:setvarblock name="action_buttons">
+                <a href="javascript:void(0)"
+                    onclick="doRemoveItems(getByID('<$mt:var name="object_type"$>-listing-form'), '<mt:var name="object_label" lower_case="1" escape="js">', '<mt:var name="object_label_plural" lower_case="1" escape="js">'); return false;"
+                    accesskey="x"
+                    title="<__trans phrase="Delete selected [_1] (x)" params="<mt:var name="object_label_plural">">"
+                    ><__trans phrase="Delete"></a>
+                <a href="javascript:void(0)"
+                    onclick="doImportItems(getByID('<$mt:var name="object_type"$>-listing-form'), '<mt:var name="object_label" lower_case="1" escape="js">', '<mt:var name="object_label_plural" lower_case="1" escape="js">'); return false;"
+                    accesskey="i"
+                    title="<__trans phrase="Import selected [_1] (x)" params="<mt:var name="object_label_plural">">"
+                    ><__trans phrase="Import"></a>
+
+</mt:setvarblock>
+
+<mt:setvarblock name="html_head" append="1">
+<script type="text/javascript">
+/* <![CDATA[ */
+
+function doImportItems (f, singular, plural, nameRestrict, args, params) {
+    if (params && (typeof(params) == 'string')) {
+        params = { 'mode': params };
+    } else if (!params) {
+        params = {}
+    }
+    var verb = params['verb'] || trans('import');
+    var mode = params['mode'] || 'import_sourcefeeds';
+    var object_type;
+    if (params['type']) {
+        object_type = params['type'];
+    } else {
+        for (var i = 0; i < f.childNodes.length; i++) {
+            if (f.childNodes[i].name == '_type') {
+                object_type = f.childNodes[i].value;
+                break;
+            }
+        }
+    }
+    var count = countMarked(f, nameRestrict);
+    if (!count) {
+        alert(params['none_prompt'] || trans('You did not select any [_1] to [_2].', plural, verb));
+        return false;
+    }
+    var singularMessage = params['singular_prompt'] || trans('Are you sure you want to [_2] this [_1]?');
+    var pluralMessage = params['plural_prompt'] || trans('Are you sure you want to [_3] the [_1] selected [_2]?');
+    if (confirm(count == 1 ? trans(singularMessage, singular, verb) : trans(pluralMessage, count, plural, verb))) {
+        return doForMarkedInThisWindow(f, singular, plural, nameRestrict, mode, args);
+    }
+}
+
+var tableSelect;
+function init()
+{
+    // setup
+    tableSelect = new TC.TableSelect( "ReblogSourcefeed-listing-table" );
+    tableSelect.rowSelect = true;
+}
+
+TC.attachLoadEvent( init );
+/* ]]> */
+</script>
+<style>
+tr.haserror.even {
+	background-color: #f33;
+}
+tr.haserror.odd {
+	background-color: #f66;
+}
+
+</style>
+</mt:setvarblock>
+
+<mt:setvarblock name="content_header">
+<p id="create-new-link"><a href="<$mt:var name="mt_url"$>?__mode=edit_sourcefeed&amp;_type=<mt:var name="object_type">&amp;blog_id=<$mt:var name="blog_id"$>" class="icon-left icon-create"><__trans phrase="Add a [_1] to this blog" params="<mt:var name="object_label" lower_case="1">"></a></p>
+</mt:setvarblock>
+<mt:include name="include/header.tmpl">
+<mtapp:listing>
+    <mt:if __first__>
+        <thead>
+            <tr>
+                <th class="cb"><input type="checkbox" name="id-head" value="all" class="select" /></th>
+                <th>Label</th>
+                <th>URL</th>
+            </tr>
+        </thead>
+        <tbody>
+    </mt:if>
+    <tr class="<mt:if name="__odd__">odd<mt:else>even</mt:if><mt:if name="has_error"> haserror</mt:if>" id="<mt:var name="id">_row">
+        <td class="cb"><input type="checkbox" name="id" value="<mt:var name="id">" class="select" /></td>
+        <td><a href="<$mt:var name="script_url"$>?__mode=edit_sourcefeed&amp;_type=<mt:var name="object_type">&amp;id=<$mt:var name="id"$>&amp;blog_id=<$mt:var name="blog_id"$>"><mt:var name="label" escape="html"></a></td>
+        <td><mt:var name="url" escape="html"></td>
+    </tr>
+    <mt:if __last__>
+        </tbody>
+    </mt:if>
+</mtapp:listing>
+
+<mt:include name="include/footer.tmpl">

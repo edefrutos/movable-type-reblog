@@ -1,0 +1,761 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="http://feeds.feedburner.com/~d/styles/atom10full.xsl" type="text/xsl" media="screen"?><?xml-stylesheet href="http://feeds.feedburner.com/~d/styles/itemcontent.css" type="text/css" media="screen"?><feed xmlns="http://www.w3.org/2005/Atom" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0">
+   <title>MovableType.org - Home for the MT Community</title>
+   <link rel="alternate" type="text/html" href="http://www.movabletype.org/" />
+   
+   <id>tag:www.movabletype.org,2007-05-25://2</id>
+   <updated>2008-12-17T23:02:28Z</updated>
+   <subtitle>Professional Publishing Platform for Bloggers</subtitle>
+   <generator uri="http://www.sixapart.com/movabletype/">Movable Type Pro 4.23-en</generator>
+
+<link rel="self" href="http://feeds.feedburner.com/MovableTypeBeta" type="application/atom+xml" /><feedburner:browserFriendly>This is an XML content feed. It is intended to be viewed in a newsreader or syndicated to another site, subject to copyright and fair use.</feedburner:browserFriendly><entry>
+   <title>Facebook Connect for Movable Type</title>
+   <link rel="alternate" type="text/html" href="http://www.movabletype.org/2008/12/facebook_connect_for_movable_type.html" />
+   <id>tag:www.movabletype.org,2008://2.11641</id>
+   
+   <published>2008-12-04T20:47:22Z</published>
+   <updated>2008-12-17T23:02:28Z</updated>
+
+   
+   <summary>Curly quotes are illegal, as is the “&nbsp;” entity.</summary>
+   <author>
+      <name>Chris Ernest Hall</name>
+      <uri>http://www.djchall.com</uri>
+   </author>
+   
+      <category term="News" scheme="http://www.sixapart.com/ns/types#category" />
+   
+      <category term="Plugins" scheme="http://www.sixapart.com/ns/types#category" />
+
+   
+   <category term="beta" label="beta" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="commenting" label="commenting" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="facebook" label="facebook" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="plugins" label="plugins" scheme="http://www.sixapart.com/ns/types#tag" />
+   
+   <content type="html" xml:lang="en" xml:base="http://www.movabletype.org/">
+      <![CDATA[Today we are pleased to announce the beta release of the Facebook Connect Commenters plugin for Movable Type Pro 4.23 and MTOS 4.23, following yesterday's <a href="http://developers.facebook.com/news.php?blog=1&amp;story=179">announcement</a> of the <a href="http://wiki.developers.facebook.com/index.php/Facebook_Connect_Plugin_Directory">Facebook Connect plugin directory</a> as well as Monday's announcement of <a href="http://movabletype.com/motion/">Movable Type Motion</a>, which includes the plugin as well. It's available for immediate download from <a href="http://plugins.movabletype.org/facebook-connect-commenters/">the plugin directory</a>.<br /><br /><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://www.movabletype.org/assets_c/2008/12/Picture%201-1-2034.html" onclick="window.open('http://www.movabletype.org/assets_c/2008/12/Picture 1-1-2034.html','popup','width=977,height=562,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><img src="http://www.movabletype.org/assets_c/2008/12/Picture%201-1-thumb-400x230-2034.png" alt="Picture 1-1.png" class="mt-image-right" style="margin: 0pt 20px 20px 20pt; float: right;" height="230" width="400" /></a></span>This Open Source plugin adds Facebook Connect to <span class="Apple-style-span" style="font-weight: bold;">any</span> Movable Type powered site and allows any Facebook user to sign in, comment, and share their actions on Facebook.<br /><br />Using Facebook Connect, MT automatically displays a commenter's Facebook user name and photo next to their comments.  Then, Movable Type automatically lets all of a commenter's friends on Facebook know about the comment via the mini-feed on that commenter's Facebook profile. This helps to drive traffic to your blog -- and your content -- not just from <span class="Apple-style-span" style="font-style: italic;">your</span> community, but from the social network of everyone who participates on your site.<div><br /></div><div>And Facebook Connect joins a range of other authentication options which use OpenID to allow commenters to sign in on your Movable Type site. From Google to Yahoo, AOL to LiveJournal to WordPress, or even our own Vox and TypePad services, almost any popular service can be used as a sign-in option on your site.<br /><div><br /><div><b>Important</b>: please be sure to review the read me file included with the file since you will need to create a Facebook app in order for the authentication and transmission of comments to Facebook to work properly.<br /><br />Please note that this is an unsupported beta release, but we are very interested in your feedback and bug reports. If you wish to report a bug, please create a case in our <a href="http://bugs.movabletype.org/">public bug tracking system</a>.<br /> </div></div></div>]]>
+      
+   </content>
+</entry>
+
+<entry>
+
+   <title>MT 4.23 is now out</title>
+   <link rel="alternate" type="text/html" href="http://www.movabletype.org/2008/12/mt_423_is_now_out.html" />
+   <id>tag:www.movabletype.org,2008://2.11615</id>
+   
+   <published>2008-12-03T22:32:48Z</published>
+   <updated>2008-12-03T22:50:23Z</updated>
+   
+   <summary>In case you missed the announcement post on mt.com, yesterday evening we released Movable Type 4.23. Much thanks to the community members who submitted bug reports and code patches that contributed to this release. More details can be found on...</summary>
+
+   <author>
+      <name>Chris Ernest Hall</name>
+      <uri>http://www.djchall.com</uri>
+   </author>
+   
+      <category term="News" scheme="http://www.sixapart.com/ns/types#category" />
+   
+      <category term="Security" scheme="http://www.sixapart.com/ns/types#category" />
+   
+   <category term="bugfix" label="bugfix" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="mtos423" label="mtos 4.23" scheme="http://www.sixapart.com/ns/types#tag" />
+
+   <category term="security" label="security" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="xss" label="xss" scheme="http://www.sixapart.com/ns/types#tag" />
+   
+   <content type="html" xml:lang="en" xml:base="http://www.movabletype.org/">
+      <![CDATA[In case you missed the <a href="http://www.movabletype.com/blog/2008/12/mt-423-released.html">announcement post</a> on mt.com, yesterday evening we released Movable Type 4.23. Much thanks to the community members who submitted bug reports and code patches that contributed to this release. More details can be found on the <a href="http://www.movabletype.org/mt_423_change_log.html">change log</a>, or you can just use the following direct download links to get MTOS 4.23:<br /><br /><ul><li><a href="http://www.movabletype.org/downloads/MTOS-4.23-en.tar.gz">MTOS-4.23-en.tar.gz</a></li><li><a href="http://www.movabletype.org/downloads/MTOS-4.23-en.zip">MTOS-4.23-en.zip</a><br /></li></ul><br />Please note that this is a mandatory security upgrade due to the fixes for XSS vulnerabilities that it includes. <br />]]>
+      
+   </content>
+</entry>
+
+<entry>
+   <title>bugs.mt.org scheduled downtime</title>
+   <link rel="alternate" type="text/html" href="http://www.movabletype.org/2008/11/bugsmtorg_scheduled_downtime.html" />
+
+   <id>tag:www.movabletype.org,2008://2.11350</id>
+   
+   <published>2008-11-19T20:19:05Z</published>
+   <updated>2008-11-21T20:36:39Z</updated>
+   
+   <summary>Just a quick heads up that our bug tracking system at:http://bugs.movabletype.orgwill be unavailable from 9am to 1pm (pacific time) on Friday Nov. 21st as we migrate it to a new data center. Apologies in advance for any inconvenience. Update: the...</summary>
+   <author>
+      <name>Chris Ernest Hall</name>
+
+      <uri>http://www.djchall.com</uri>
+   </author>
+   
+   
+   <content type="html" xml:lang="en" xml:base="http://www.movabletype.org/">
+      <![CDATA[Just a quick heads up that our bug tracking system at:<br /><br /><a href="http://bugs.movabletype.org/">http://bugs.movabletype.org</a><br /><br />will be unavailable from 9am to 1pm (pacific time) on Friday Nov. 21st as we migrate it to a new data center. Apologies in advance for any inconvenience. <br /><br />Update: the maintenance has now been completed, and bugs.mt.org should be available again. <br /> ]]>
+      
+   </content>
+</entry>
+
+<entry>
+   <title>Hacking the UI to make Movable Type better</title>
+
+   <link rel="alternate" type="text/html" href="http://www.movabletype.org/2008/11/hacking_the_ui_to_make_movable_type_better.html" />
+   <id>tag:www.movabletype.org,2008://2.10754</id>
+   
+   <published>2008-11-10T17:56:13Z</published>
+   <updated>2008-11-10T18:40:39Z</updated>
+   
+   <summary>One of the great things about Movable Type is the multitude of ways it provides for folks to modify the core user interface without disturbing existing functionality. In fact Movable Type allows virtually anyone to: easily skin any screen in...</summary>
+   <author>
+      <name>Byrne Reese</name>
+
+      <uri>http://www.majordojo.com</uri>
+   </author>
+   
+      <category term="Hacks" scheme="http://www.sixapart.com/ns/types#category" />
+   
+      <category term="Just for Fun" scheme="http://www.sixapart.com/ns/types#category" />
+   
+      <category term="Plugins" scheme="http://www.sixapart.com/ns/types#category" />
+   
+   <category term="hacks" label="hacks" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="movabletype" label="movable type" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="opensource" label="open source" scheme="http://www.sixapart.com/ns/types#tag" />
+
+   <category term="plugindevelopment" label="plugin development" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="plugins" label="plugins" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="userinterface" label="user interface" scheme="http://www.sixapart.com/ns/types#tag" />
+   
+   <content type="html" xml:lang="en" xml:base="http://www.movabletype.org/">
+      <![CDATA[<p>One of the great things about Movable Type is the multitude of ways it provides for folks to modify the core user interface without disturbing existing functionality. In fact Movable Type allows virtually anyone to:</p>
+
+<ul>
+<li>easily <a href="http://www.movabletype.org/documentation/developer/apps/alt-templates.html">skin any screen in the application</a> <strong>without requiring you to touch a single line of code</strong>. </li>
+</ul>
+
+<p>And any developer to:</p>
+
+<ul>
+<li><a href="http://www.movabletype.org/documentation/developer/apps/transformation-callbacks.html">transform the user interface on the fly</a> with transformer callbacks - a system inspired by <a href="https://addons.mozilla.org/en-US/firefox/addon/748">Greasemonkey</a>, a popular Firefox add-on. </li>
+<li><a href="http://www.movabletype.org/documentation/developer/apps/creating-a-new-screen-in-the-application.html">define their own screens</a> and seamlessly add them to the application via its <a href="http://www.movabletype.org/documentation/developer/apps/building-menus.html">menuing system</a>, or through <a href="http://www.movabletype.org/documentation/developer/apps/page-actions.html">page actions</a>.</li>
+</ul>
+
+<p>It is these systems that we can use to help prototype and test new functionality and concepts in a more agile way that allows us to be more responsive to the feedback we receive. Take for example one of our latest hacks: an improvement to the User Management area for a blog:</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://www.movabletype.org/2008/11/10/Picture%201.png"><img alt="New User Management Screenshot" src="http://www.movabletype.org/assets_c/2008/11/Picture 1-thumb-500x224.png" width="500" height="224" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></span></p>
+
+<p>This <a href="http://plugins.movabletype.org/enhanced-user-management/index.html">new plugin</a>, available to users of <a href="http://www.movabletype.org/download.html">Movable Type 4.2</a> and greater provides an improved layout and design to the user management area. There is not a lot of added functionality under the hood... yet. That is of course where you come in: what kind of added functionality would you like to see? And what do you think of the new design? What additional changes would you like to see? What kind of activities do you engage in most frequently when managing your readers and members?</p>
+]]>
+      
+
+   </content>
+</entry>
+
+<entry>
+   <title>What do you want to build using Movable Type?</title>
+
+   <link rel="alternate" type="text/html" href="http://www.movabletype.org/2008/11/what_do_you_want_to_build_using_movable_type.html" />
+   <id>tag:www.movabletype.org,2008://2.10736</id>
+   
+   <published>2008-11-07T23:25:42Z</published>
+   <updated>2008-11-10T15:08:02Z</updated>
+   
+   <summary>Movable Type has a well earned reputation as an incredibly scalable, flexible and powerful publishing platform and is used by large enterprises, publishers and bloggers alike. Movable Type however was not designed exclusively for large publishers - Movable Type is...</summary>
+   <author>
+      <name>Byrne Reese</name>
+
+      <uri>http://www.majordojo.com</uri>
+   </author>
+   
+   <category term="design" label="design" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="designers" label="designers" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="documentation" label="documentation" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="hacking" label="hacking" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="movabletype" label="movable type" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="reference" label="reference" scheme="http://www.sixapart.com/ns/types#tag" />
+
+   
+   <content type="html" xml:lang="en" xml:base="http://www.movabletype.org/">
+      <![CDATA[<p>Movable Type has a well earned reputation as an incredibly scalable, flexible and powerful publishing platform and is used by large enterprises, publishers and bloggers alike. Movable Type however was not designed exclusively for large publishers - Movable Type is in fact suitable for <em>anyone</em> wanting to create a web site, big and small.</p>
+
+<p>To help our users build the next generation of <a href="http://kottke.org/">popular</a>, <a href="http://www.elise.com/recipes/archives/007349simply_recipes_for_iphone.php">innovative</a> and <a href="http://www.talkingpointsmemo.com/">ground breaking</a> blogs we have begun to invest heavily in one of the community's most critical resources: documentation. Movable Type's developer documentation has already received an enormous overhaul, and now we turn our attention to our documentation for designers. </p>
+
+<p>In fact, our work has already begun on that documentation; but before we make too much progress, we wanted to first check with our community and see if we are covering the right concepts, tutorials and topics. We therefore invite you to check out our new Movable Type Designer Guide's <a href="http://www.movabletype.org/documentation/design/">table of contents</a> and give us feedback on the set of topics it outlines for our new designer documentation. Do you feel it will leave any major questions for you unanswered? Do you wish it would just cover one more thing? Let us know, we want to hear from you!</p>
+
+<p>We are also working on training materials and will soon be offering free webinars on <em>Building Web Sites with Movable Type</em>, just as soon as we work through and develop a solid curriculum. Check out the following preview of just such a training session:</p>
+
+<div style="text-align: center; margin: 0 auto 0 auto;"><object style="margin:0px" width="425" height="355"><param name="movie" value="http://static.slideshare.net/swf/ssplayer2.swf?doc=building-web-sites-with-movable-type-1226014493193425-9&stripped_title=building-web-sites-with-movable-type-presentation" /><param name="allowFullScreen" value="true"/><param name="allowScriptAccess" value="always"/><embed src="http://static.slideshare.net/swf/ssplayer2.swf?doc=building-web-sites-with-movable-type-1226014493193425-9&stripped_title=building-web-sites-with-movable-type-presentation" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="355"></embed></object></div>
+
+<p>If you are interested in attending a free webinar, <a href="mailto:byrne@sixapart.com?subject=Interested+in+Design+Webinar">let me know</a> and I will let you know when we schedule our first session.</p>
+
+<p>Do you have a passion or interest in our documentation? Want to stay up to date with our documentation project? Check out the following resources:</p>
+
+<ul>
+<li>Subscribe to the <a href="http://www.movabletype.org/documentation/changes.xml">documentation change log feed</a></li>
+<li>Visit the <a href="http://forums.movabletype.org/movable-type/documentation/">Movable Type Documentation Forum</a></li>
+</ul>
+
+<p>And finally, want to see the progress we have already made on our developer documentation? Check it out:</p>
+
+<ul>
+<li><a href="/documentation/developer/">Hacking Movable Type</a></li>
+<li><a href="/documentation/developer/apps/">Building Movable Type Applications</a></li>
+<li><a href="/documentation/developer/objects/">MT::Object Reference</a></li>
+<li><a href="/documentation/developer/callbacks/">Callback Reference for Movable Type</a></li>
+<li><a href="http://www.movabletype.org/documentation/man/">Movable Type Perl API Man Pages</a></li>
+</ul>
+]]>
+      
+
+   </content>
+</entry>
+
+<entry>
+   <title>Taking full advantage of template module caching</title>
+   <link rel="alternate" type="text/html" href="http://www.movabletype.org/2008/10/taking_full_advantage_of_template_module_caching.html" />
+   <id>tag:www.movabletype.org,2008://2.10420</id>
+
+   
+   <published>2008-10-31T18:39:35Z</published>
+   <updated>2008-10-30T18:56:16Z</updated>
+   
+   <summary>Movable Type offers a number of features to help administrators increase the performance of their system. Chief among them is template module caching. As the name may imply, any template module in Movable Type can have caching enabled, which causes...</summary>
+   <author>
+      <name>Byrne Reese</name>
+      <uri>http://www.majordojo.com</uri>
+
+   </author>
+   
+      <category term="Tips &amp; Tricks" scheme="http://www.sixapart.com/ns/types#category" />
+   
+   <category term="documentation" label="documentation" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="modulecaching" label="module caching" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="serversideincludes" label="server side includes" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="templates" label="templates" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="tips" label="tips" scheme="http://www.sixapart.com/ns/types#tag" />
+   
+   <content type="html" xml:lang="en" xml:base="http://www.movabletype.org/">
+      <![CDATA[<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://www.movabletype.org/2008/10/30/Template_Module_Caching.jpg"><img alt="Template_Module_Caching.jpg" src="http://www.movabletype.org/assets_c/2008/10/Template_Module_Caching-thumb-300x189.jpg" width="300" height="189" class="mt-image-right" style="float: right; margin: 0 0 20px 20px;" /></a></span>Movable Type offers a <a href="http://www.movabletype.org/documentation/mt42/performance.html">number of features</a> to help administrators increase the performance of their system. Chief among them is <a href="http://www.movabletype.org/documentation/mt42/module-caching.html">template module caching</a>. As the name may imply, any template module in Movable Type can have caching enabled, which causes Movable Type to store the output and HTML from the module in Movable Type's database for later use. That way, if a template module is used frequently, then Movable Type will minimize the number of times it goes to the database to generate its content. </p>
+
+<p>To help our users take complete advantage of this important feature introduced in <a href="http://www.movabletype.org/2008/08/movable_type_42_is_here.html">Movable Type 4.2</a>, we have assembled the "<a href="http://www.movabletype.org/documentation/administrator/ultimate-guide-to-template-module-caching.html">Ultimate Guide to Template Module Caching</a>." It comes complete with:</p>
+
+<ul>
+<li>insight into why this feature can have such profound performance benefits </li>
+<li>sample code</li>
+<li>tips on what to look for when decided which modules to cache</li>
+<li>a detailed explanation of how this feature can be used in conjunction with <a href="http://www.movabletype.org/documentation/mt42/server-side-includes.html">server side includes</a></li>
+<li>information you may not have known about, like the ability to override the global cache context and create more granular and context sensitive module caches</li>
+</ul>
+
+<p>We hope to make this guide the most definitive source for information about this feature, so if you have additions or ideas for how to make <a href="http://www.movabletype.org/documentation/administrator/ultimate-guide-to-template-module-caching.html">Ultimate Guide to Template Module Caching</a> better, please let us know by leaving us a comment.</p>
+]]>
+
+      
+
+   </content>
+</entry>
+
+<entry>
+   <title>Taking full advantage of template module caching</title>
+   <link rel="alternate" type="text/html" href="http://www.movabletype.org/2008/10/taking_full_advantage_of_template_module_caching.html" />
+   <id>tag:www.movabletype.org,2008://2.10418</id>
+   
+   <published>2008-10-31T18:39:35Z</published>
+   <updated>2008-10-30T18:54:11Z</updated>
+
+   
+   <summary>Movable Type offers a number of features to help administrators increase the performance of their system. Chief among them is template module caching. As the name may imply, any template module in Movable Type can have caching enabled, which causes...</summary>
+   <author>
+      <name>Byrne Reese</name>
+      <uri>http://www.majordojo.com</uri>
+   </author>
+   
+      <category term="Tips &amp; Tricks" scheme="http://www.sixapart.com/ns/types#category" />
+   
+   <category term="documentation" label="documentation" scheme="http://www.sixapart.com/ns/types#tag" />
+
+   <category term="modulecaching" label="module caching" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="serversideincludes" label="server side includes" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="templates" label="templates" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="tips" label="tips" scheme="http://www.sixapart.com/ns/types#tag" />
+   
+   <content type="html" xml:lang="en" xml:base="http://www.movabletype.org/">
+      <![CDATA[<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://www.movabletype.org/2008/10/30/Template_Module_Caching.jpg"><img alt="Template_Module_Caching.jpg" src="http://www.movabletype.org/assets_c/2008/10/Template_Module_Caching-thumb-300x189.jpg" width="300" height="189" class="mt-image-right" style="float: right; margin: 0 0 20px 20px;" /></a></span>Movable Type offers a <a href="http://www.movabletype.org/documentation/mt42/performance.html">number of features</a> to help administrators increase the performance of their system. Chief among them is <a href="http://www.movabletype.org/documentation/mt42/module-caching.html">template module caching</a>. As the name may imply, any template module in Movable Type can have caching enabled, which causes Movable Type to store the output and HTML from the module in Movable Type's database for later use. That way, if a template module is used frequently, then Movable Type will minimize the number of times it goes to the database to generate its content. </p>
+
+<p>To help our users take complete advantage of this important feature introduced in <a href="http://www.movabletype.org/2008/08/movable_type_42_is_here.html">Movable Type 4.2</a>, we have assembled the "<a href="http://www.movabletype.org/documentation/administrator/ultimate-guide-to-template-module-caching.html">Ultimate Guide to Template Module Caching</a>." It comes complete with:</p>
+
+<ul>
+<li>insight into why this feature can have such profound performance benefits </li>
+<li>sample code</li>
+<li>tips on what to look for when decided which modules to cache</li>
+<li>a detailed explanation of how this feature can be used in conjunction with <a href="http://www.movabletype.org/documentation/mt42/server-side-includes.html">server side includes</a></li>
+<li>information you may not have known about, like the ability to override the global cache context and create more granular and context sensitive module caches</li>
+</ul>
+]]>
+      
+
+   </content>
+</entry>
+
+<entry>
+
+   <title>Making it easier to debug and test your templates</title>
+   <link rel="alternate" type="text/html" href="http://www.movabletype.org/2008/10/making_it_easier_to_debug_and_test_your_templates.html" />
+   <id>tag:www.movabletype.org,2008://2.10408</id>
+   
+   <published>2008-10-30T19:36:41Z</published>
+   <updated>2008-10-30T18:39:24Z</updated>
+   
+   <summary>Sometimes there can be nothing more frustrating than trying to troubleshoot publishing performance. Often users must resort to the brute force method of debugging, such as: embedding print STDERR statements in Movable Type's source code - but how many people...</summary>
+
+   <author>
+      <name>Byrne Reese</name>
+      <uri>http://www.majordojo.com</uri>
+   </author>
+   
+      <category term="Tips &amp; Tricks" scheme="http://www.sixapart.com/ns/types#category" />
+   
+   <category term="debugging" label="debugging" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="developers" label="developers" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="performance" label="performance" scheme="http://www.sixapart.com/ns/types#tag" />
+
+   <category term="sql" label="sql" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="templates" label="templates" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="tuning" label="tuning" scheme="http://www.sixapart.com/ns/types#tag" />
+   
+   <content type="html" xml:lang="en" xml:base="http://www.movabletype.org/">
+      <![CDATA[<p>Sometimes there can be nothing more frustrating than trying to troubleshoot publishing performance. Often users must resort to the brute force method of debugging, such as:</p>
+
+<ul>
+<li><p>embedding <code>print STDERR</code> statements in Movable Type's source code - but how many people know how to do <em>that</em>?</p></li>
+<li><p>blocking out huge swaths of code using the <a href="http://www.movabletype.org/documentation/appendices/tags/ignore.html"><code>&lt;mt:ignore&gt;</code></a> tag to hone in on the root cause - a cumbersome and time consuming process.</p></li>
+<li><p>turning on <a href="http://www.movabletype.org/documentation/mt42/performance-logging.html">performance logging</a> - a feature whose output was intended for machines and as a result is sometimes too verbose or difficult to read by mere mortals.</p></li>
+</ul>
+
+<p>To help our users find a more elegant and efficient way to debug their templates and optimize their system, we have developed a simple tool that can more quickly and effectively help users hone in on those aspects of their templates that are the bottlenecks in their publishing system. The tool is a simple command line tool that outputs four very useful things:</p>
+
+<ol>
+<li><p><strong>the output from the template itself</strong> - very the accuracy of the template's output yourself.</p></li>
+<li><p><strong>a table of all the template tags invoked by the template</strong> - this table not only shows the template tag name, but also the average time it took to process each one.</p></li>
+<li><p><strong>total build time and total number of queries executed</strong> - when trying to find the template at the root of your performance problem, this will help you to quickly identify the outlier.</p></li>
+<li><p><strong>a table of all the SQL statements made during the publishing process</strong> - an effective way to find the actual query that is problematic.  </p></li>
+</ol>
+
+<p>Check out this sample output:</p>
+
+<pre><code>&lt;template output omitted&gt;
+Template Tag Utilization:
+.----------+----------------------+--------+---------+--------+--------+-------.
+| Time     | Tag                  | Calls  | Avg     | SQL    | Hits   | Miss  |
++----------+----------------------+--------+---------+--------+--------+-------+
+| 0.083    | entryassets          | 20     | 0.004   | 40     | 20     | 20    |
+| 0.040    | entries              | 8      | 0.005   | 12     | 16     | 4     |
+| 0.027    | assetproperty        | 16     | 0.002   | 16     | 0      | 0     |
+| 0.020    | include              | 6      | 0.003   | 7      | 3      | 3     |
+| 0.019    | categories           | 4      | 0.005   | 5      | 20     | 5     |
+| 0.014    | assetthumbnaillink   | 4      | 0.003   | 4      | 4      | 0     |
+| 0.010    | keyvalues            | 4      | 0.002   | 0      | 0      | 0     |
+| 0.006    | collatesetfield      | 32     | 0.000   | 0      | 0      | 0     |
+| 0.004    | setvarblock          | 28     | 0.000   | 0      | 0      | 0     |
+| 0.004    | gridcell             | 8      | 0.000   | 0      | 0      | 0     |
+                                   -- snip--
+'----------+----------------------+--------+---------+--------+--------+-------'
+  Total Queries: 86
+  Total Build Time: 0.261901
+.------------------------------------------------------------------+-----------.
+| Query                                                            | Number    |
++------------------------------------------------------------------+-----------+
+| RAMCACHE_GET ?                                                   | 63        |
+| RAMCACHE_ADD ?                                                   | 32        |
+| SELECT asset_id FROM mt_asset, mt_objectasset WHERE (objectasse- | 20        |
+| t_object_ds = ?) AND (objectasset_asset_id = asset_id) AND (obj- |           |
+| ectasset_object_id = ?)                                          |           |
+| SELECT asset_id, asset_blog_id, asset_class, asset_created_by, - | 20        |
+| asset_created_on, asset_description, asset_file_ext, asset_file- |           |
+| _name, asset_file_path, asset_label, asset_mime_type, asset_mod- |           |
+| ified_by, asset_modified_on, asset_parent, asset_url FROM mt_as- |           |
+| set WHERE (asset_id IN (?))                                      |           |
+| SELECT asset_meta_asset_id, asset_meta_type, asset_meta_vchar, - | 20        |
+| asset_meta_vchar_idx, asset_meta_vdatetime, asset_meta_vdatetim- |           |
+| e_idx, asset_meta_vinteger, asset_meta_vinteger_idx, asset_meta- |           |
+| _vfloat, asset_meta_vfloat_idx, asset_meta_vblob, asset_meta_vc- |           |
+| lob FROM mt_asset_meta WHERE (asset_meta_asset_id = ?)           |           |
+                                   -- snip--
+'------------------------------------------------------------------+-----------'
+</code></pre>
+
+<p>Using the tool is relatively straight forward: all you need to do is give the tool the ID of the template you want to debug, in addition to any other contextual information that template might need, e.g. a category ID if you are publishing a category archive. Running the tool with the conventional <code>--help</code> flag will tell you all of the possible options.</p>
+
+<ul>
+<li><a href="http://code.sixapart.com/svn/movabletype/trunk/tools/mt-tmpl-test">Download mt-tmpl-test now</a></li>
+</ul>
+
+<p>Keep reading behind the cut to learn more specifically how to use this tool.</p>
+]]>
+      <![CDATA[<h2>Example Usage</h2>
+
+<p>First, installation:</p>
+
+<pre><code>prompt&gt; cp mt-tmpl-test /path/to/mt/tools
+</code></pre>
+
+<p>Now, how to get help:</p>
+
+<pre><code>prompt&gt; cd /path/to/mt
+prompt&gt; perl ./tools/mt-tmpl-test --help
+usage:  ./tools/mt-tmpl-test [template name]
+
+    --blog &lt;name&gt;      Specify a blog context by blog ID or name.
+    --template &lt;name&gt;  Specify a template to process by template ID or name.
+    --category &lt;label&gt; Specify a category to process by category ID or label.
+    --entry &lt;title&gt;    Specify an entry to process by entry ID or title.
+    --author &lt;name&gt;    Specify an author to process by ID or username.
+    --archive &lt;type&gt;   Specify a archive type.
+    --profile          Enables SQL and template tag profiling.
+    --debug &lt;mode&gt;     Sets MT's DebugMode.
+</code></pre>
+
+<p>And finally, how to actually use the tool:</p>
+
+<pre><code>prompt&gt; perl ./tools/mt-tmpl-test --template=123 --profile
+* output to appear here *
+</code></pre>
+]]>
+   </content>
+</entry>
+
+<entry>
+
+   <title>Obtaining total transparency into your publishing system </title>
+   <link rel="alternate" type="text/html" href="http://www.movabletype.org/2008/10/obtaining_total_transparency_into_your_publishing_system.html" />
+   <id>tag:www.movabletype.org,2008://2.10364</id>
+   
+   <published>2008-10-24T18:36:51Z</published>
+   <updated>2008-10-30T17:25:34Z</updated>
+   
+   <summary>Movable Type has proven time and time again that it can help some of the Internet's most influential and most innovative blogs become some of the largest as well. Not every content management system is up to the task of...</summary>
+
+   <author>
+      <name>Byrne Reese</name>
+      <uri>http://www.majordojo.com</uri>
+   </author>
+   
+      <category term="Hacks" scheme="http://www.sixapart.com/ns/types#category" />
+   
+      <category term="Plugins" scheme="http://www.sixapart.com/ns/types#category" />
+   
+   <category term="opensource" label="open source" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="optimization" label="optimization" scheme="http://www.sixapart.com/ns/types#tag" />
+
+   <category term="performance" label="performance" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="plugins" label="plugins" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="publishqueue" label="publish queue" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="publishqueuemanager" label="publish queue manager" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="publishing" label="publishing" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="theschwartz" label="theschwartz" scheme="http://www.sixapart.com/ns/types#tag" />
+   
+   <content type="html" xml:lang="en" xml:base="http://www.movabletype.org/">
+      <![CDATA[<p>Movable Type has proven time and time again that it can help some of the Internet's most <a href="http://www.huffingtonpost.com/">influential</a> and most <a href="http://kottke.org">innovative</a> blogs become some of the largest as well. Not every content management system is up to the task of publishing sites on this scale, but Movable Type is. One reason for that is that its publishing engine has <a href="http://www.movabletype.org/documentation/enterprise/publish-queue.html">tremendous flexibility</a> in regards to how it can be deployed, allowing every site to fine tune its performance independently across <a href="http://www.movabletype.org/documentation/enterprise/system-architecture.html">as many machines</a> as is necessary.</p>
+
+<p>One critical component often used by these large sites is the "<a href="http://www.movabletype.org/documentation/administrator/publishing/publish-queue.html">Movable Type Publishing Queue</a>" - a simple publishing service to which the system can offload the task of keeping a web site up to date. This in turn dramatically increases performance, and improves the stability of the entire system by distributing much of the work a content management system must perform to a set of dedicated and distributed resources.</p>
+
+<p>To give users the transparency and visibility into this critical system, we have begun work on a new plugin called <a href="http://plugins.movabletype.org/publish-queue-manager/">Publish Queue Manager</a>. This free and open source plugin provides its users with the following features:</p>
+
+<ul>
+<li>view a list of all the jobs in their publishing queue.</li>
+<li>see which jobs on the queue are currently being worked on.</li>
+<li>see if any of the jobs on the queue have produced an error.</li>
+<li>change the priority of any of the jobs on the queue.</li>
+<li>delete jobs off the queue.</li>
+</ul>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://www.movabletype.org/2008/10/24/pqmanager.png"><img alt="Publish Queue Manager screenshot" src="http://www.movabletype.org/assets_c/2008/10/pqmanager-thumb-590x324.png" width="590" height="324" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></span></p>
+
+<p>Of course, not every Movable Type user has a need to use Publish Queue, but those that do have come to rely upon the benefits it provides a great deal, which is why this plugin can be so useful to those users. So how do you know if <em>you</em> should be using Publish Queue?</p>
+
+<ol>
+<li><p>It seems to take Movable Type a long time to publish a single entry or new comment.</p></li>
+<li><p>Your readers leave <em>a lot</em> of comments, or your site tends to get a lot of comments submitted all at once.</p></li>
+<li><p>You utilize a lot of archive maps on your site, like Comment Feeds, Author Archives, Category Archives, Category-Monthly Archives, etc.</p></li>
+<li><p>You have one template on your site, like a large Google Sitemap, or a large archive listing that by itself takes a long time to publish.</p></li>
+<li><p>Your system is often publishing multiple comments or entries at the same time.</p></li>
+</ol>
+
+<p>If you feel any of these apply to you, consider consulting our documentation on how to <a href="http://www.movabletype.org/documentation/administrator/publishing/publish-queue.html">get started using Publish Queue</a>.</p>
+
+<p>Help us test the Publish Queue Manager <strong>Beta</strong> now by <a href="http://www.majordojo.com/projects/publish-queue-manager.php">downloading</a> it, installing it and letting us know what you think!</p>
+]]>
+      
+
+   </content>
+
+</entry>
+
+<entry>
+   <title>Google Sitemap and Template Caching Tips</title>
+   <link rel="alternate" type="text/html" href="http://www.movabletype.org/2008/10/google_sitemap_and_template_caching_tips.html" />
+   <id>tag:www.movabletype.org,2008://2.10300</id>
+   
+   <published>2008-10-16T21:34:02Z</published>
+   <updated>2008-10-16T21:43:01Z</updated>
+
+   
+   <summary>On a recent call with the Movable Type Community we discussed and shared tips on how to best take advantage of Movable Type's built in caching system. One of the tips I shared is something I have been doing on...</summary>
+   <author>
+      <name>Byrne Reese</name>
+      <uri>http://www.majordojo.com</uri>
+   </author>
+   
+      <category term="Tips &amp; Tricks" scheme="http://www.sixapart.com/ns/types#category" />
+   
+   
+   <content type="html" xml:lang="en" xml:base="http://www.movabletype.org/">
+
+      <![CDATA[<p>On a recent <a href="http://wiki.movabletype.org/MT_Conference_Calls">call with the Movable Type Community</a> we discussed and shared tips on how to best take advantage of <a href="http://www.movabletype.org/documentation/mt42/module-caching.html">Movable Type's built in caching system</a>. One of the tips I shared is something I have been doing on my personal site and on a number of customer sites with great success, and it relates to how to optimize the publication of a Google Sitemap in a sustainable way.</p>
+
+<p><a href="http://en.wikipedia.org/wiki/Sitemaps">Google Sitemaps</a> have become an essential tool for bloggers to help optimize their content for search engines, also known as SEO or "Search Engine Optimization." Google Sitemaps are files published by a web site that detail each and every page on the web site and give some indication as to the frequency they are updated by the system. This helps ensure that when the Google fairy visits your site to slurp up and index your site's content that:</p>
+
+<ol>
+<li><p>Google indexes <em>all</em> of your content, and does not overlook any content that might be orphaned on your site because no other page links to it directly.</p></li>
+<li><p>Google is able to schedule additional visits of the Google Fairy when your content is likely to be updated. </p></li>
+</ol>
+
+<p>Anyone can publish a Google Sitemap for the Movable Type powered web site or blog using <a href="http://wiki.movabletype.org/Canonical_Google_Sitemap_template">a template provided by the community</a>. This template has a number of parameters in it that can be used to fine tune your sitemap specifically for your web site. The challenge rests however in publishing this file. For some large sites, publishing a Google Sitemap can dramatically slow down publishing, as Movable Type needs to load every single entry and page into memory while it outputs a monstrous XML file. Some of these files have known to grow larger than several megabytes. </p>
+
+<p>You can mitigate the impacts of publishing a sitemap by following these simple steps:</p>
+
+<ol>
+<li><p>Create a template module called "Google Sitemap Include" and paste into it the <a href="http://wiki.movabletype.org/Canonical_Google_Sitemap_template">template provided by the community</a>.</p></li>
+<li><p>For your "Google Sitemap Include" module turn on caching and set the cache to expire once every 24 hours.</p></li>
+<li><p>Now, create an index template called "Google Sitemap" and paste into its body the following template code:</p>
+
+<pre><code>&lt;mt:include module="Google Sitemap Include"&gt;
+</code></pre></li>
+</ol>
+
+<p>What this does is result in a Google Sitemap being published only once per day. This keeps your Google Sitemap up to date, while only incurring the cost of publishing it once. Handy. Of course this technique could be applied to virtually any template that can take a long time to publish, but also doesn't need to be up to date on a minute-by-minute basis.</p>
+
+<p>We share a lot of tips on our <a href="http://wiki.movabletype.org/MT_Conference_Calls">community conference calls</a>, you should join us next time!</p>
+]]>
+      
+
+   </content>
+</entry>
+
+<entry>
+   <title>The Little Things: Comment Replies</title>
+   <link rel="alternate" type="text/html" href="http://www.movabletype.org/2008/10/the_little_things_comment_replies.html" />
+   <id>tag:www.movabletype.org,2008://2.10290</id>
+   
+   <published>2008-10-15T15:40:41Z</published>
+
+   <updated>2008-10-15T15:57:10Z</updated>
+   
+   <summary>A lot of times, some of the most satisfying things about using Movable Type are the little touches that make managing a site easier or more convenient. One of those great, unheralded features that's been around since MT4's release is...</summary>
+   <author>
+      <name>Anil Dash</name>
+      <uri>http://www.anildash.com/</uri>
+   </author>
+   
+   <category term="commentreply" label="comment reply" scheme="http://www.sixapart.com/ns/types#tag" />
+
+   <category term="commentthreading" label="comment threading" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="commenting" label="commenting" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="replies" label="replies" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="reply" label="reply" scheme="http://www.sixapart.com/ns/types#tag" />
+   
+   <content type="html" xml:lang="en" xml:base="http://www.movabletype.org/">
+      <![CDATA[A lot of times, some of the most satisfying things about using Movable Type are the little touches that make managing a site easier or more convenient. One of those great, unheralded features that's been around since MT4's release is a simple ability to <a href="http://www.movabletype.org/documentation/administrator/managing-community/replying-to-comments.html">reply to any comment directly from the Movable Type application</a>.<div><br /></div><div>The feature is documented as part of our larger guide on <a href="http://www.movabletype.org/documentation/administrator/managing-community/">Managing a Community with Movable Type</a>, but since it's a handy shortcut, it's worth calling out on its own. Simply point at any published comment in a comment listing page in Movable Type, and you'll see a "Reply" link appear. (If you've set your <a href="http://www.movabletype.org/documentation/administrator/managing-community/managing-comments.html">display options</a> for that listing page to "Expanded", you'll always see a Reply link next to the Edit link.)</div><div><br /></div><div>Click the Reply link, and a simple window will pop up with the full text of the comment you were replying to, along with a big space for you to type your reply.</div><div><br /></div><div><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="reply-to-comment.png" src="http://www.movabletype.org/images/reply-to-comment.png" width="250" height="187" class="mt-image-right" style="float: right; margin: 0 0 20px 20px;" /></span></div><div>As soon as you click on "Submit", your comment will be published on the relevant entry or page. If you're using <a href="http://www.movabletype.org/documentation/mt42/threading.html">threaded comments</a> on your site, Movable Type will automatically display your comment as a child comment of the one that inspired it.</div><div><br /></div><div>There are lots of other ways to make use of this convenient feature, but this one should be a winner if you live in the Movable Type administrative interface all day and prefer to respond to your community from that familiar environment.</div>]]>
+      
+   </content>
+</entry>
+
+<entry>
+
+   <title>Migrating from Right Fields to Custom Fields - the beta begins</title>
+   <link rel="alternate" type="text/html" href="http://www.movabletype.org/2008/10/migrating_from_right_fields_to_custom_fields_-_the_beta_begi.html" />
+   <id>tag:www.movabletype.org,2008://2.10171</id>
+   
+   <published>2008-10-03T23:09:30Z</published>
+   <updated>2008-10-03T23:30:11Z</updated>
+   
+   <summary>Today we are happy to announce a public beta of a new plugin for Movable Type that helps users using Right Fields on Movable Type 3.x upgrade to Movable Type 4.2 using Custom Fields. There has been a great need...</summary>
+
+   <author>
+      <name>Byrne Reese</name>
+      <uri>http://www.majordojo.com</uri>
+   </author>
+   
+      <category term="Plugins" scheme="http://www.sixapart.com/ns/types#category" />
+   
+   
+   <content type="html" xml:lang="en" xml:base="http://www.movabletype.org/">
+      <![CDATA[<p>Today we are happy to announce a public beta of a new plugin for Movable Type that helps users using <a href="http://www.staggernation.com/mtplugins/RightFields/">Right Fields</a> on Movable Type 3.x upgrade to Movable Type 4.2 using Custom Fields. There has been a great need in our community for this, which is why some of our <a href="http://everitz.com/">veterans</a> <a href="http://cxliv.org/2008/05/09/converting_rightfields_to_customfields_now_with_sql_goodness.php">stepped up</a> to assemble partial solutions to this problem. These solutions helped a great number of people, but were not able to address everyone's need universally, because the solution to this problem was not trivial. Recognizing this, we began a process with the community to <a href="http://wiki.movabletype.org/Requirements:Right_Fields_to_Custom_Fields_Migration">identify and document what the ideal solution would look like</a>. Then we implemented it so that users who felt they couldn't upgrade to Movable Type 4 could finally do so.</p>
+
+<p>The plugin is called "Linked Entry Custom Fields" because the plugin does not exclusively help you migrate from Right Fields to Custom Fields. The plugin also provides your version of <a href="http://www.movabletype.com/download/">Movable Type Pro</a> with an additional custom field type: linked entries. Linked entries, a feature <a href="http://www.staggernation.com/mtplugins/RightFields/#TypeLinked
+">native</a> to Right Fields, provides a way for bloggers to establish relationships between related blog posts. You can imagine using this feature for example to help curate a list of related entries that you want to link to at the bottom of your post. So even if you have never used Right Fields, you may find some value in this plugin as well.</p>
+
+<p>As with any beta, it is important for users to <strong>first make a backup of their system before beginning the migration</strong> and upgrade process. This is <em>especially</em> true with this plugin as there is a lot of data being moved around and there is potential for an unanticipated bug resulting in data loss. That being said, we would not be releasing this plugin now without having run a number of tests ourselves and feeling it was of sufficient quality to be released publicly.</p>
+
+<p>To get started, visit the <a href="http://plugins.movabletype.org/linked-entry-custom-fields/index.html">Linked Entry Custom Field page</a> in the Plugin Directory.</p>
+]]>
+      
+
+   </content>
+
+</entry>
+
+<entry>
+   <title>Sandbox for Movable Type</title>
+   <link rel="alternate" type="text/html" href="http://www.movabletype.org/2008/09/sandbox_for_movable_type.html" />
+   <id>tag:www.movabletype.org,2008://2.7495</id>
+   
+   <published>2008-09-10T07:00:01Z</published>
+   <updated>2008-09-10T06:23:27Z</updated>
+
+   
+   <summary>Ever thought about radically changing the look of your blog without much design work? Are you a designer who likes to work in semantic HTML and do amazing things with CSS? Maybe you’re moving from WordPress to Movable Type and...</summary>
+   <author>
+      <name>Beau Smith</name>
+      <uri>http://beausmith.com</uri>
+   </author>
+   
+      <category term="Design" scheme="http://www.sixapart.com/ns/types#category" />
+
+   
+      <category term="Hacks" scheme="http://www.sixapart.com/ns/types#category" />
+   
+      <category term="Plugins" scheme="http://www.sixapart.com/ns/types#category" />
+   
+   <category term="hackathon" label="hackathon" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="plugin" label="plugin" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="sixapart" label="six apart" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="template" label="template" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="templateset" label="template set" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="theme" label="theme" scheme="http://www.sixapart.com/ns/types#tag" />
+   
+   <content type="html" xml:lang="en" xml:base="http://www.movabletype.org/">
+
+      <![CDATA[<p>Ever thought about radically changing the look of your blog without much design work?  Are you a designer who likes to work in semantic HTML and do amazing things with CSS?  Maybe you&#8217;re moving from WordPress to Movable Type and want to keep your current design. <strong>Sandbox for Movable Type</strong> may just be what you&#8217;re looking for.</p>
+
+<p>What began as a hackathon project of between <a href="http://www.movabletype.org/members/bryantighe">Bryan Tighe</a> and myself a little while ago has yielded some great results: <strong>today we&#8217;re releasing <a href="http://plugins.movabletype.org/sandbox/">Sandbox for Movable Type</a></strong> as a plugin that allows the many <a href="http://sndbx.org/results/designs/">Sandbox themes</a> to be used on Movable Type blogs as well. (BTW, Hackathons&#8212;the ability to spend every Wednesday scratching our own itches&#8212;are one of the reasons why I love <a href="http://www.sixapart.com/about/jobs/">working at Six Apart</a>. The <a href="http://beausmith.com/mt/plugins/vanilla/">Vanilla Template Set</a> was another of my recent Hackathon projects.)</p>
+
+<p>Sandbox is similar to the <a href="http://www.csszengarden.com/">CSS Zen Garden</a> in that it showcases the power of CSS&#8212;the ability to radically transform the look of a site without changing any of the underlying HTML. Movable Type has always supported this concept. Tools like the <a href="http://www.movabletype.org/design/assistant/">Movable Type Design Assistant</a> have made it much simpler to customize the look of your Movable Type blog through CSS alone. And this concept and philosophy is also why we supported <a href="http://www.thestylecontest.com/">The Style Contest</a>, which not only succeeded in producing over 150 new designs to style Movable Type&#8217;s default templates, but also in rewarding the awesome designers behind each of the winning designs. </p>
+
+<p><a href="http://scottwallick.com/">Scott Wallick</a> and <a href="http://andyskelton.com/">Andy Skelton</a> created <a href="http://www.plaintxt.org/themes/sandbox/">Sandbox</a> as a theme for WordPress and it has since been used as the base for many blogs over the last few years. At its core, Sandbox is a rich and semantic&#8212;yet simple&#8212;HTML structure with many unique CSS classes throughout in order to make it simple for non-designers to easily make small design adjustments to an existing Sandbox theme. More experienced designers can even radically change the look and structure of a blog using CSS alone.  Using the dynamically generated classes, themes can even style the site differently each hour of the day!</p>
+
+<p>This well-thought-out structure has attracted many web designers and developers to create themes for Sandbox which other can then use as a starting point for their own customizations to suit their individual needs. (Though Scott points out that <a href="http://scottwallick.com/">his site</a> uses purely unmodified Sandbox html!)</p>
+
+<p>Here are three of our favorite themes showing off the flexibility of Sandbox&#8230; and remember that all of these designs use the <em>exact same</em> HTML templates!</p>
+
+<ul>
+<li><p><a href="http://sndbx.org/results/designs/essay/">Essay</a> by Ian Stewart</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="Essay (Sandbox Theme Screenshot)" src="http://www.movabletype.org/assets/sandbox-essay.gif" width="" height="" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p></li>
+<li><p><a href="http://sndbx.org/results/designs/takimata/">Takimata</a> by Robert Ellis</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="sandbox-takimata.gif" src="http://www.movabletype.org/assets/sandbox-takimata.gif" width="" height="" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p></li>
+<li><p><a href="http://sndbx.org/results/designs/blackbox/">Blackbox</a></a> by Hillary Louise Johnson</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="sandbox-blackbox.gif" src="http://www.movabletype.org/assets/sandbox-blackbox.gif" width="" height="" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p></li>
+<li><p><a href="http://sndbx.org/results/designs/diurnal/">Diurnal</a> by Carolyn Smith</p>
+
+<p>Diurnal is a great example of a theme using Sandbox&#8217;s ability to change appearance based upon the time of day. Diurnal has different styles for sunrise, morning, afternoon, sunset, and night which you can see across the top of this screenshot:</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="sandbox-diurmal.jpg" src="http://www.movabletype.org/assets/sandbox-diurmal.jpg" width="400" height="300" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p></li>
+</ul>
+
+<p>And we owe a huge thanks to the designers of all of the variations of Sandbox that we&#8217;re making available. Here are their names and the designs they&#8217;ve created &#8212; be sure to check out their sites and show your appreciation for their work!</p>
+
+<ul>
+<li><a href="http://sndbx.org/results/designs/magnolia/">Magnolia</a> by Andrea Daigle</li>
+<li><a href="http://sndbx.org/results/designs/ponjong/">Ponjong</a> by Nurudin Jauhari</li>
+<li><a href="http://sndbx.org/results/designs/prima/">Prima</a> by Sunaryo Hadi</li>
+<li><a href="http://sndbx.org/results/designs/sandpress/">Sandpress</a> by Arpit Jacob</li>
+<li><a href="http://sndbx.org/results/designs/shades-of-gray/">Shades of Gray</a> by Leslie Franke</li>
+<li><a href="http://sndbx.org/results/designs/tiffany-blue/">Tiffany Blue</a> by Ia Lucero</li>
+<li><a href="http://sndbx.org/results/designs/moo-point/">Moo-Point</a> by Will Wilkins</li>
+<li><a href="http://sndbx.org/results/designs/promised-land/">Promised Land</a> by Adam Freetly</li>
+</ul>
+
+<p><a href="http://beausmith.com/mt/sandbox/installation.php">Installing Sandbox on Movable Type 4.2</a> is pretty easy. Sandbox requires that you have PHP setup on your web server in order to create dynamic classes; this should be easy as nearly every host comes standard with PHP out of the box these days.</p>
+
+<p>The Sandbox plugin also ships with a newer version of StyleCatcher (the Style selector within Movable Type), making it simple to switch between different Sandbox styles.  Installation instructions for Sandbox and StyleCatcher are included in the plugin, though if you&#8217;ve installed a plugin before it should be a snap.</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="sandbox-stylecatcher.jpg" src="http://www.movabletype.org/assets/sandbox-stylecatcher.jpg" width="600" height="332" class="mt-image-none" style="" /></span></p>
+
+<p>We&#8217;ve shipped all the <a href="http://sndbx.org/results/">winning themes from the Sandbox Design Contest</a> and a handful of other Sandbox themes. You can also <a href="http://beausmith.com/mt/sandbox/themes.php">install other themes</a> from the <a href="http://sndbx.org/results/designs/">Sandbox Design Contest</a> with Sandbox for Movable Type or <a href="http://www.plaintxt.org/wp-content/uploads/sandbox_readme.html#started">create your own Sandbox theme</a></p>
+
+<p><a href="http://plugins.movabletype.org/sandbox/"><strong>Download Sandbox for Movable Type</strong></a> from the plugin directory and please let us know what you think and how we can make it better.</p>
+]]>
+      
+
+   </content>
+</entry>
+
+<entry>
+   <title>FogBugz reorganization</title>
+   <link rel="alternate" type="text/html" href="http://www.movabletype.org/2008/08/fogbugz_reorganization.html" />
+   <id>tag:www.movabletype.org,2008://2.7325</id>
+   
+   <published>2008-08-25T22:48:18Z</published>
+
+   <updated>2008-08-25T23:01:23Z</updated>
+   
+   <summary>Just a quick note to say that now we have shipped MT 4.2, we are tweaking the way we organize the MT FogBugz instance. Since we launched the open-source project with MT 4.1, we've had two projects that have held current...</summary>
+   <author>
+      <name>Chris Ernest Hall</name>
+      <uri>http://www.djchall.com</uri>
+   </author>
+   
+   <category term="casemanagement" label="case management" scheme="http://www.sixapart.com/ns/types#tag" />
+
+   <category term="fbz" label="fbz" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="mtos" label="mtos" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="opensource" label="open source" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="process" label="process" scheme="http://www.sixapart.com/ns/types#tag" />
+   
+   <content type="html" xml:lang="en" xml:base="http://www.movabletype.org/">
+      <![CDATA[Just a quick note to say that now we have shipped MT 4.2, we are tweaking the way we organize the MT <a href="http://bugs.movabletype.org">FogBugz</a> instance. Since we launched the open-source project with MT 4.1, we've had two projects that have held current MT cases, MT Internal and MT Open Source. MT Internal corresponded to the packs and any other proprietary non-OS code, while the MTOS project held cases that involve the code that is GPL'ed. The MTOS project was visible to anyone with an account in fbz, while only Six Apart employees could see MT Internal.<div><div><br /></div><div>The problem with this approach was that there were some MTOS cases that shouldn't have been public (because, for example, they might have a user's email address or other sensitive information, or relate to security vulnerabilities that had not yet been publicly disclosed) There are also many cases that are MT Internal that non-Six Apart employees should be able to see, like bugs and patches that impact enterprise consultants and developers.</div><div><br /></div><div>Going forward, instead of MT Internal and MTOS, the MT fbz instance will instead have two projects, one public and one private, both of which can contain bugs in both the open source and proprietary portions of the product. To reflect this change, the MTOS project name has been changed to "Movable Type-External." </div><div><br /></div><div>This shouldn't change too much for the MT community, but it means that if you wish to enter a bug report for the Pro or Enterprise components of the product, you can do that directly instead of filing a case in the MTOS project, then having the case seemingly disappear when it was moved to MT Internal. </div><div><br /></div><div>If you have any questions or concerns about these changes, or anything else relating to MT case management process, please let us know in the comments to this post. </div></div>]]>
+      
+   </content>
+</entry>
+
+<entry>
+
+   <title>Connecting mixi Users with Movable Type Communities</title>
+   <link rel="alternate" type="text/html" href="http://www.movabletype.org/2008/08/connecting_mixi_with_movable_type.html" />
+   <id>tag:www.movabletype.org,2008://2.7273</id>
+   
+   <published>2008-08-22T16:40:32Z</published>
+   <updated>2008-08-22T16:41:31Z</updated>
+   
+   <summary>As we started to show with Movable Type Pro last week, blogging is evolving to encompass the world of social networking and connect to the rest of the web; merging publishing with community. Since the release of Movable Type 4.0...</summary>
+
+   <author>
+      <name>David Recordon</name>
+      <uri>http://www.davidrecordon.com/</uri>
+   </author>
+   
+      <category term="Plugins" scheme="http://www.sixapart.com/ns/types#category" />
+   
+   <category term="mixi" label="mixi" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="openid" label="openid" scheme="http://www.sixapart.com/ns/types#tag" />
+   <category term="plugins" label="plugins" scheme="http://www.sixapart.com/ns/types#tag" />
+
+   <category term="socialnetworking" label="social networking" scheme="http://www.sixapart.com/ns/types#tag" />
+   
+   <content type="html" xml:lang="en" xml:base="http://www.movabletype.org/">
+      <![CDATA[<p>As we started to <a href="http://www.movabletype.com/blog/2008/08/movable-type-pro-42.html">show with Movable Type Pro last week</a>, blogging is evolving to encompass the world of social networking and connect to the rest of the web; merging publishing with community. Since the release of Movable Type 4.0 last year, we've built in native support for technologies like <a href="http://openid.net/">OpenID</a> and now <a href="http://oauth.net/">OAuth</a>, to make it even easier for people to bring parts of their profile with them when they come to your blog.  <a href="http://www.sixapart.com/blog/2008/07/facebook-connects-with-movable.html">Last month we demoed integration of Facebook Connect with Movable Type</a> which continues to make this vision a reality, though it isn't enough to integrate with just one social network.</p>
+
+<p><a href="http://mixi.jp/">mixi</a> is Japan's most popular social network (one in five Japanese web users use mixi) and earlier this week they launched support for OpenID.  Six Apart's <a href="http://www.sixapart.jp/press_releases/2008/08/20-1600.html">Japan team participated in this launch</a> and we are now <a href="http://plugins.movabletype.org/mixicomment/">shipping a plugin</a> to make it easy for mixi users to interact with Movable Type powered communities.  The mixiComment plugin brings the community of mixi to your site, giving commenters an even better experience by signing in using their mixi OpenID.  Even better, the user interface takes advantage of new features in OpenID 2.0 so that normal people don't even need to know what OpenID is; instead just click a button to login with their mixi account.  Just like Facebook Connect, this makes it easier for a wide range of people to participate on your site by being less work for them to sign in while allowing them to bring pieces of their profile with them all over the web.</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="mixilogin.png" src="http://www.movabletype.org/2008/08/21/mixilogin.png" width="631" height="207" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="mixiComments.png" src="http://www.movabletype.org/2008/08/21/mixiComments.png" width="622" height="381" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p>
+
+<p>You can download the <a href="http://plugins.movabletype.org/mixicomment/">mixiComment plugin</a> from our plugin directory and easily add support for the largest social network in Japan to your blog.</p>]]>
+      
+   </content>
+</entry>
+
+</feed>
+
