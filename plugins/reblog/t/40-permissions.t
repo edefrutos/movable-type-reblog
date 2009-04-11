@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-use lib 't/lib', 'lib', 'extlib', 'plugins/AdvancePermissions/t/lib';
+use lib 't/lib', 'lib', 'extlib';
 
 BEGIN {
     $ENV{MT_APP} = 'MT::App::CMS';
