@@ -228,6 +228,7 @@ sub import_entries {
     require LWP::UserAgent;
     my $ua = MT->new_ua( { timeout => 20 } );
     $ua->env_proxy;
+    $ua->max_size('1048576'); # 1MB
     my $res;
 
     unless (
