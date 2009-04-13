@@ -678,26 +678,26 @@ sub determine_file_type {
     use Switch;
     my $type = 'unknown';
     switch ($url) {
-        case /^.*\.mp3$/i     { $type = 'audio/mpeg';               next; }
-        case /^.*\.m4a$/i     { $type = 'audio/mp4';                next; }
-        case /^.*\.wma$/i     { $type = 'audio/wma';                next; }
-        case /^.*\.midi$/i    { $type = 'audio/midi';               next; }
-        case /^.*\.aa$/i      { $type = 'audio/aa';                 next; }
-        case /^.*\.wav$/i     { $type = 'audio/wav';                next; }
-        case /^.*\.ogg$/i     { $type = 'application/ogg';          next; }
-        case /^.*\.torrent$/i { $type = 'application/x-bittorrent'; next; }
-        case /^.*\.exe$/i     { $type = 'application/octet-stream'; next; }
-        case /^.*\.bmp$/i     { $type = 'image/bmp';                next; }
-        case /^.*\.jpe?g$/i   { $type = 'image/jpeg';               next; }
-        case /^.*\.gif$/i     { $type = 'image/gif';                next; }
-        case /^.*\.tiff?$/i   { $type = 'image/tiff';               next; }
-        case /^.*\.png$/i     { $type = 'image/png';                next; }
-        case /^.*\.mp4/i      { $type = 'video/mp4';                next; }
-        case /^.*\.mp4v/i     { $type = 'video/mp4';                next; }
-        case /^.*\.mpeg$/i    { $type = 'video/mpeg';               next; }
-        case /^.*\.avi$/i     { $type = 'video/msvideo';            next; }
-        case /^.*\.mov$/i     { $type = 'video/quicktime';          next; }
-        case /^.*\.wmv$/i     { $type = 'video/x-ms-wmv';           next; }
+        case /^.*\.mp3$/i     { $type = 'audio/mpeg'; }
+        case /^.*\.m4a$/i     { $type = 'audio/mp4'; }
+        case /^.*\.wma$/i     { $type = 'audio/wma'; }
+        case /^.*\.midi$/i    { $type = 'audio/midi'; }
+        case /^.*\.aa$/i      { $type = 'audio/aa'; }
+        case /^.*\.wav$/i     { $type = 'audio/wav'; }
+        case /^.*\.ogg$/i     { $type = 'application/ogg'; }
+        case /^.*\.torrent$/i { $type = 'application/x-bittorrent'; }
+        case /^.*\.exe$/i     { $type = 'application/octet-stream'; }
+        case /^.*\.bmp$/i     { $type = 'image/bmp'; }
+        case /^.*\.jpe?g$/i   { $type = 'image/jpeg'; }
+        case /^.*\.gif$/i     { $type = 'image/gif'; }
+        case /^.*\.tiff?$/i   { $type = 'image/tiff'; }
+        case /^.*\.png$/i     { $type = 'image/png'; }
+        case /^.*\.mp4/i      { $type = 'video/mp4'; }
+        case /^.*\.mp4v/i     { $type = 'video/mp4'; }
+        case /^.*\.mpeg$/i    { $type = 'video/mpeg'; }
+        case /^.*\.avi$/i     { $type = 'video/msvideo'; }
+        case /^.*\.mov$/i     { $type = 'video/quicktime'; }
+        case /^.*\.wmv$/i     { $type = 'video/x-ms-wmv'; }
     }
     return $type;
 }
