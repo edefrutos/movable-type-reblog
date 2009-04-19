@@ -1,19 +1,20 @@
 #############################################################################
 # Copyright © 2007-2009 Six Apart Ltd.
-# This program is free software: you can redistribute it and/or modify it 
+# This program is free software: you can redistribute it and/or modify it
 # under the terms of version 2 of the GNU General Public License as published
-# by the Free Software Foundation, or (at your option) any later version.  
+# by the Free Software Foundation, or (at your option) any later version.
 # This program is distributed in the hope that it will be useful, but WITHOUT
-# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or 
-# FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License 
-# version 2 for more details.  You should have received a copy of the GNU 
-# General Public License version 2 along with this program. If not, see 
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+# FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+# version 2 for more details.  You should have received a copy of the GNU
+# General Public License version 2 along with this program. If not, see
 # <http://www.gnu.org/licenses/>.
-# $Id: Tags.pm 17902 2009-04-07 02:16:15Z steve $
+# $Id: Tags.pm 18705 2009-04-19 16:54:22Z steve $
 
 package Reblog::Tags;
 use strict;
 use warnings;
+use Switch;
 
 sub _hdlr_if_reblog {
     my ( $ctx, $args ) = @_;
@@ -405,7 +406,7 @@ sub _hdlr_reblog_entries {
     $res;
 }
 
-sub _hdlr_reblog_sources {
+sub _hdlr_reblog_sourcefeeds {
     my ( $ctx, $args, $cond ) = @_;
 
     my $res     = '';
@@ -413,110 +414,86 @@ sub _hdlr_reblog_sources {
     my $tokens  = $ctx->stash('tokens');
     my $blog    = $ctx->stash('blog');
 
-    #	   range
-    #	To be used together with an array reference as the value for a col-
-    #	umn in \%terms; specifies that the specific column should be
-    #	searched for a range of values, rather than one specific value.
-
-    #	The value of range should be a hash reference, where the keys are
-    #	column names, and the values are all 1; each key specifies a column
-    #	that should be interpreted as a range.
-
-    my $now = time;
-    my $then;
-
-    use MT::Util qw( format_ts offset_time_list offset_time);
-    my $mt_vers = MT->version_number;
-
-    if ( exists( $args->{max_item_age} ) && $args->{max_item_age} =~ /^\d+$/ )
-    {
-        $then = $now - $args->{max_item_age} * 24 * 60 * 60;
+    my $blog_id;
+    if ( $args->{blog_id} ) {
+        $blog_id = $args->{blog_id};
     }
     else {
-        $then = 0;
+        ($blog) or return $ctx->error('No blog in context');
+        $blog_id = $blog->id;
     }
 
-    $now
-        = POSIX::strftime(
-        ( $mt_vers < 3.2 ? "%Y-%m-%d %H:%M:%S" : "%Y%m%d%H%M%S" ),
-        offset_time_list( $now, $blog ) );
-    $then
-        = POSIX::strftime(
-        ( $mt_vers < 3.2 ? "%Y-%m-%d %H:%M:%S" : "%Y%m%d%H%M%S" ),
-        offset_time_list( $then, $blog ) );
-
-    my @rbds = Reblog::ReblogData->load(
-        { created_on => [ $then, $now ] },
-        {   sort      => 'created_on',
-            direction => 'descend',
-            range     => { created_on => 1 }
+    my $arguments;
+    $arguments->{blog_id} = $blog_id;
+    if ( $args->{active_only} ) {
+        $arguments->{is_active} = 1;
+    }
+    my $sourcefeed_iter = Reblog::ReblogSourcefeed->load_iter( $arguments, );
+    my @sources;
+    while ( my $sourcefeed = $sourcefeed_iter->() ) {
+        my ( $title, $url ) = ( $sourcefeed->label, $sourcefeed->url );
+        my $last
+            = Reblog::ReblogData->load( { sourcefeed_id => $sourcefeed->id },
+            { limit => 1 } );
+        if ($last) {
+            $title = $last->source;
+            $url   = $last->source_url;
         }
-    );
-
-    $now = POSIX::strftime( "%Y%m%d%H%M%S", offset_time_list( time, $blog ) );
-
-    my %sources;
-    my $total_entry = 0;
-    for my $rb_data (@rbds) {
-        my $entry = MT::Entry->load(
-            { id => $rb_data->entry_id, blog_id => $blog->id } );
-        next
-            if (
-            !(     $entry
-                && defined( $rb_data->source_feed_url )
-                && $rb_data->source_feed_url
-                && $rb_data->source_url
-            )
-            );
-        if ( !exists( $sources{ $rb_data->source_url } ) ) {
-            $sources{ $rb_data->source_url } = {
-                n        => 0,
-                id       => $rb_data->sourcefeed_id,
-                url      => $rb_data->source_url,
-                feed_url => $rb_data->source_feed_url,
-                title    => $rb_data->source,
-                min_ts   => $now,
-                max_ts   => POSIX::strftime(
-                    "%Y%m%d%H%M%S", offset_time_list( 0, $blog )
-                )
+        push @sources,
+            {
+            id         => $sourcefeed->id,
+            url        => $url,
+            feed_url   => $sourcefeed->url,
+            label      => $sourcefeed->label,
+            title      => $title,
+            sourcefeed => $sourcefeed,
             };
-        }
-        my $source = $sources{ $rb_data->source_url };
-
-        if ( $rb_data->created_on le $source->{min_ts} ) {
-            $source->{min_ts} = $rb_data->created_on;
-        }
-
-        if ( $rb_data->created_on ge $source->{max_ts} ) {
-            $source->{max_ts} = $rb_data->created_on;
-        }
-
-        $source->{n}++;
-        $total_entry++;
     }
-
-    my (@sources) = sort { $b->{n} <=> $a->{n} } values %sources;
-
-    if ( exists( $args->{max_feed_age} ) && $args->{max_feed_age} =~ /^\d+$/ )
-    {
-        $then = time - $args->{max_feed_age} * 24 * 60 * 60;
+    my ( $limit, $offset ) = ( 0, 0 );
+    if ( $args->{offset} and $args->{offset} =~ m/^\d+$/ ) {
+        $offset = $args->{offset};
+    }
+    if ( $args->{limit} and $args->{limit} =~ m/^\d+$/ ) {
+        $limit = $args->{limit};
+    }
+    my @slice;
+    if ($limit) {
+        my $end = $offset + $limit - 1;
+        @slice = @sources[ $offset .. $end ];
     }
     else {
-        $then = 0;
+        my $end = scalar @sources - 1;
+        @slice = @sources[ $offset .. $end ];
     }
-
-    $then
-        = POSIX::strftime( "%Y%m%d%H%M%S", offset_time_list( $then, $blog ) );
-
+    if ( $args->{sort} ) {
+        switch ( $args->{sort} ) {
+            case q{title} {
+                @slice = map { $_->[0] }
+                    sort { $a->[1] cmp $b->[1] }
+                    map { [ $_, $_->{title} ] } @slice;
+            }
+            case q{label} {
+                @slice = map { $_->[0] }
+                    sort { $a->[1] cmp $b->[1] }
+                    map { [ $_, $_->{label} ] } @slice;
+            }
+            case q{last_checked} {
+                @slice = map { $_->[0] }
+                    sort {
+                    return 1 if ( ! defined $a->[1] );
+                    return -1  if ( ! defined $b->[1] );
+                    $a->[1] <=> $b->[1]
+                    }
+                    map { [ $_, $_->{sourcefeed}->epoch_last_read ] } @slice;
+            }
+        }
+    }
     my $i = 0;
-    my @filtered = grep { $_->{max_ts} ge $then } @sources;
-    @sources = @filtered;
-    foreach my $source (@sources) {
-        $source->{nTotal} = $total_entry;
-
+    foreach my $source (@slice) {
+        next if ( !defined $source );
         my $vars = $ctx->{__stash}{vars} ||= {};
         local $vars->{__first__}   = !$i;
-        local $vars->{__last__}    = !defined $sources[ $i + 1 ];
+        local $vars->{__last__}    = !defined $slice[ $i + 1 ];
         local $vars->{__odd__}     = ( $i % 2 ) == 0;             # 0-based $i
         local $vars->{__even__}    = ( $i % 2 ) == 1;
         local $vars->{__counter__} = $i + 1;
@@ -526,8 +503,7 @@ sub _hdlr_reblog_sources {
         $res .= $out;
         $i++;
     }
-
-    $res;
+    return $res;
 }
 
 sub _hdlr_reblog_source_url {
@@ -561,54 +537,6 @@ sub _hdlr_reblog_source {
     my $ctx = shift;
     my $f   = $ctx->stash('reblog_source');
     return $f->{title} ? $f->{title} : '';
-}
-
-sub _hdlr_reblog_source_min_date {
-    my $source = $_[0]->stash('reblog_source');
-
-    my $att = $_[1];
-    $att->{ts} = $source->{min_ts};
-
-    return MT::Template::Context::_hdlr_date( $_[0], $att );
-}
-
-sub _hdlr_reblog_source_max_date {
-    my $source = $_[0]->stash('reblog_source');
-
-    my $att = $_[1];
-    $att->{ts} = $source->{max_ts};
-
-    return MT::Template::Context::_hdlr_date( $_[0], $att );
-}
-
-sub _hdlr_reblog_source_freq {
-    my $ctx = shift;
-    my $att = shift;
-
-    my $f = $ctx->stash('reblog_source');
-    my ( $scale, $scale_min, $scale_max ) = ( 0, 0, 0 );
-    if ( exists( $att->{format} ) && $att->{format} eq 'percent' ) {
-        $scale     = 1;
-        $scale_min = 0;
-        $scale_max = 100;
-    }
-    elsif ( exists( $att->{scale_min} ) && exists( $att->{scale_max} ) ) {
-
-        # assume you've entered numbers
-        $scale_min = $att->{scale_min};
-        $scale_max = $att->{scale_max};
-        $scale     = 1;
-    }
-    my $res = $f->{n};
-    if ($scale) {
-        $res = $f->{n} / $f->{nTotal};
-        $res = $res * ( $scale_max - $scale_min ) + $scale_min;
-        if ( exists( $att->{truncate} ) && $att->{truncate} ) {
-            $res = int($res);
-        }
-    }
-
-    return $res;
 }
 
 sub _hdlr_reblog_favicon {

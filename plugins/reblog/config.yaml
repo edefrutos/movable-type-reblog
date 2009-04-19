@@ -1,7 +1,7 @@
 name: Reblog
 id: reblog
 key: reblog
-version: 2.13_rc1
+version: 2.13rc_3
 schema_version: 2.952
 description: Plugin for automatic syndication with attribution.
 author_name: Six Apart Ltd.; original Reblog by Eyebeam & Stamen
@@ -101,10 +101,7 @@ tags:
         EntryReblogThumbnailImg: $reblog::Reblog::Tags::_hdlr_entry_reblog_thumbnail_url
         EntryReblogSourceTitle: $reblog::Reblog::Tags::_hdlr_entry_reblog_orig_source_title
         EntryReblogAnnotation: $reblog::Reblog::Tags::_hdlr_entry_reblog_annotation
-        ReblogSourceFreq: $reblog::Reblog::Tags::_hdlr_reblog_source_freq
         ReblogSourceId: $reblog::Reblog::Tags::_hdlr_reblog_source_id
-        ReblogSourceMinDate: $reblog::Reblog::Tags::_hdlr_reblog_source_min_date
-        ReblogSourceMaxDate: $reblog::Reblog::Tags::_hdlr_reblog_source_max_date
         ReblogSourceTitle: $reblog::Reblog::Tags::_hdlr_reblog_source
         ReblogSource: $reblog::Reblog::Tags::_hdlr_reblog_source
         ReblogSourceXMLLink: $reblog::Reblog::Tags::_hdlr_reblog_source_feed_url
@@ -115,10 +112,10 @@ tags:
         EntryReblogEnclosureLength: $reblog::Reblog::Tags::_hdlr_entry_reblog_enclosure_length
         EntryReblogEnclosureMimetype: $reblog::Reblog::Tags::_hdlr_entry_reblog_enclosure_mimetype
     block:
+        ReblogEntries: $reblog::Reblog::Tags::_hdlr_reblog_entries
+        ReblogSourcefeeds: $reblog::Reblog::Tags::_hdlr_reblog_sourcefeeds
+        ReblogEnclosureEntries: $reblog::Reblog::Tags::_hdlr_reblog_enclosure_entries
         IfReblog?: $reblog::Reblog::Tags::_hdlr_if_reblog
         IfNotReblog?: $reblog::Reblog::Tags::_hdlr_if_not_reblog
-        ReblogEntries: $reblog::Reblog::Tags::_hdlr_reblog_entries
-        ReblogSources: $reblog::Reblog::Tags::_hdlr_reblog_sources
-        ReblogEnclosureEntries: $reblog::Reblog::Tags::_hdlr_reblog_enclosure_entries
         EntryIfHasReblogAuthor?: $reblog::Reblog::Tags::_hdlr_entry_if_has_reblog_author
         EntryIfReblog?: $reblog::Reblog::Tags::_hdlr_entry_if_reblog

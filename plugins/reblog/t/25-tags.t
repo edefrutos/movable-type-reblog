@@ -8,7 +8,7 @@ use MT::Template;
 use MT::Template::Context;
 use MT::Test qw( :cms :db ::data );
 
-use Test::More tests => 57;
+use Test::More tests => 62;
 use Test::Exception;
 
 my $feedurls = [
@@ -219,21 +219,7 @@ $tmpl->blog_id( $blog->id );
 $tmpl->save;
 is ($tmpl->build($ctx), 'Really good! --Steve', '<mt:entryreblogsourcetitle> yields "Really good! --Steve"');
 
-$test_txt = '<mt:reblogsources><mt:reblogsourcefreq></mt:reblogsources>';
-$tmpl = MT::Template->new();
-$tmpl->text($test_txt);
-$tmpl->blog_id( $blog->id );
-$tmpl->save;
-is ($tmpl->build($ctx), '3', '<mt:reblogsourcefreq> yields "3" -- 3 entries imported');
-
-$test_txt = '<mt:reblogsources><mt:reblogsourcefreq format="percent"></mt:reblogsources>';
-$tmpl = MT::Template->new();
-$tmpl->text($test_txt);
-$tmpl->blog_id( $blog->id );
-$tmpl->save;
-is ($tmpl->build($ctx), '100', '<mt:reblogsourcefreq format="percent"> yields "100" -- all entries are from our one source');
-
-$test_txt = '<mt:reblogsources><mt:reblogsourceid></mt:reblogsources>';
+$test_txt = '<mt:reblogsourcefeeds><mt:reblogsourceid></mt:reblogsourcefeeds>';
 $tmpl = MT::Template->new();
 $tmpl->text($test_txt);
 $tmpl->blog_id( $blog->id );
@@ -241,49 +227,35 @@ $tmpl->save;
 is ($tmpl->build($ctx), '1', '<mt:reblogsourceid> yields "1"');
 
 
-$test_txt = '<mt:reblogsources><mt:reblogsourcemindate></mt:reblogsources>';
-$tmpl = MT::Template->new();
-$tmpl->text($test_txt);
-$tmpl->blog_id( $blog->id );
-$tmpl->save;
-is ($tmpl->build($ctx), 'December  4, 2002  5:00 AM', '<mt:reblogsourcemindate> yields "December  4, 2002  5:00 AM"');
-
-$test_txt = '<mt:reblogsources><mt:reblogsourcemaxdate></mt:reblogsources>';
-$tmpl = MT::Template->new();
-$tmpl->text($test_txt);
-$tmpl->blog_id( $blog->id );
-$tmpl->save;
-is ($tmpl->build($ctx), 'February  1, 2009 12:01 PM', '<mt:reblogsourcemaxdate> yields "February  1, 2009 12:01 PM"');
-
-$test_txt = '<mt:reblogsources><mt:reblogsourcetitle></mt:reblogsources>';
+$test_txt = '<mt:reblogsourcefeeds><mt:reblogsourcetitle></mt:reblogsourcefeeds>';
 $tmpl = MT::Template->new();
 $tmpl->text($test_txt);
 $tmpl->blog_id( $blog->id );
 $tmpl->save;
 is ($tmpl->build($ctx), 'XML.com', '<mt:reblogsourcetitle> yields "XML.com"');
 
-$test_txt = '<mt:reblogsources><mt:reblogsourcexmllink></mt:reblogsources>';
+$test_txt = '<mt:reblogsourcefeeds><mt:reblogsourcexmllink></mt:reblogsourcefeeds>';
 $tmpl = MT::Template->new();
 $tmpl->text($test_txt);
 $tmpl->blog_id( $blog->id );
 $tmpl->save;
 ok ($tmpl->build($ctx) =~ m|reblog/t/sample_good-1.0.rss|, '<mt:reblogsourcexmllink> matches "reblog/t/sample_good-1.0.rss"');
 
-$test_txt = '<mt:reblogsources><mt:reblogsourcefeedurl></mt:reblogsources>';
+$test_txt = '<mt:reblogsourcefeeds><mt:reblogsourcefeedurl></mt:reblogsourcefeeds>';
 $tmpl = MT::Template->new();
 $tmpl->text($test_txt);
 $tmpl->blog_id( $blog->id );
 $tmpl->save;
 ok ($tmpl->build($ctx) =~ m|reblog/t/sample_good-1.0.rss|, '<mt:reblogsourcefeedurl> matches "reblog/t/sample_good-1.0.rss"');
 
-$test_txt = '<mt:reblogsources><mt:reblogsourcelink></mt:reblogsources>';
+$test_txt = '<mt:reblogsourcefeeds><mt:reblogsourcelink></mt:reblogsourcefeeds>';
 $tmpl = MT::Template->new();
 $tmpl->text($test_txt);
 $tmpl->blog_id( $blog->id );
 $tmpl->save;
 is ($tmpl->build($ctx), 'http://www.xml.com/', '<mt:reblogsourcelink> yields "http://www.xml.com/"');
 
-$test_txt = '<mt:reblogsources><mt:reblogsourceurl></mt:reblogsources>';
+$test_txt = '<mt:reblogsourcefeeds><mt:reblogsourceurl></mt:reblogsourcefeeds>';
 $tmpl = MT::Template->new();
 $tmpl->text($test_txt);
 $tmpl->blog_id( $blog->id );
@@ -408,7 +380,7 @@ $tmpl->blog_id( $blog->id );
 $tmpl->save;
 is ($tmpl->build($ctx), 'No', '<mt:EntryIfReblog> returns negative when non-reblogged entry in context');
 
-# ReblogSources has existing stub coverage via the <mt:reblogsourceurl> tag et al, but let's check for first/last/etc
+# ReblogSourcefeeds has existing stub coverage via the <mt:reblogsourceurl> tag et al, but let's check for first/last/etc
 $newfeed = MT->model('ReblogSourcefeed')->new();
 $newfeed->is_active(1);
 $newfeed->blog_id( $blog->id );
@@ -422,18 +394,108 @@ $newfeed->url($feed_base . 'sample_nyt.atom');
 $newfeed->save;
 $import = Reblog::Util::do_import( $mt, '', $blog, ( $newfeed ) );
 
-$test_txt = '<mt:reblogsources>
+$test_txt = '<mt:reblogsourcefeeds>
 <mt:if name="__first__">SOURCES: </mt:if>
 <mt:if name="__even__"><span class="even"><mt:else><mt:if name="__odd__"><span class="odd"></mt:if></mt:if><mt:var name="__counter__">. <mt:reblogsourceurl></span><br />
 <mt:if name="__last__">END</mt:if>
-</mt:reblogsources>';
+</mt:reblogsourcefeeds>';
 $tmpl = MT::Template->new();
 $tmpl->text($test_txt);
 $tmpl->blog_id( $blog->id );
 $tmpl->save;
 $output = $tmpl->build($ctx);
-ok($output =~ m|^SOURCES: |s, "<mt:reblogsources> respects __first__");
-ok($output =~ m|END$|s, "<mt:reblogsources> respects __last__");
-ok($output =~ m|<span class="even">2\.|s, "<mt:reblogsources> respects __even__");
-ok($output =~ m|<span class="odd">1\.|s && $output =~ m|<span class="odd">3\.|s, "<mt:reblogsources> respects __odd__");
-ok($output =~ m|1\. .*2\. .*3\. |s, "<mt:reblogsources> respects __counter__");
+ok($output =~ m|^SOURCES: |s, "<mt:reblogsourcefeeds> respects __first__");
+ok($output =~ m|END$|s, "<mt:reblogsourcefeeds> respects __last__");
+ok($output =~ m|<span class="even">2\.|s, "<mt:reblogsourcefeeds> respects __even__");
+ok($output =~ m|<span class="odd">1\.|s && $output =~ m|<span class="odd">3\.|s, "<mt:reblogsourcefeeds> respects __odd__");
+ok($output =~ m|1\. .*2\. .*3\. |s, "<mt:reblogsourcefeeds> respects __counter__");
+
+$test_txt = q{<mt:reblogsourcefeeds limit="2">
+<mt:reblogsourcetitle> <mt:reblogsourceurl><br />
+</mt:reblogsourcefeeds>};
+$tmpl = MT::Template->new();
+$tmpl->text($test_txt);
+$tmpl->blog_id( $blog->id );
+$tmpl->save;
+$output = $tmpl->build($ctx);
+ok(($output =~ m|^XML.com|s and $output =~ m|MovableType.org| and $output !~ m|Open|s ), "<mt:reblogsourcefeeds> respects limit argument");
+$test_txt = q{<mt:reblogsourcefeeds offset="1">
+<mt:reblogsourcetitle> <mt:reblogsourceurl><br />
+</mt:reblogsourcefeeds>};
+$tmpl = MT::Template->new();
+$tmpl->text($test_txt);
+$tmpl->blog_id( $blog->id );
+$tmpl->save;
+$output = $tmpl->build($ctx);
+ok(($output =~ m|^MovableType.org|s and $output =~ m|Open | and $output !~ m|XML.com|s ), "<mt:reblogsourcefeeds> respects offset argument");
+$test_txt = q{<mt:reblogsourcefeeds limit="1" offset="1">
+<mt:reblogsourcetitle> <mt:reblogsourceurl><br />
+</mt:reblogsourcefeeds>};
+$tmpl = MT::Template->new();
+$tmpl->text($test_txt);
+$tmpl->blog_id( $blog->id );
+$tmpl->save;
+$output = $tmpl->build($ctx);
+ok(($output =~ m|^MovableType.org|s and $output !~ m|Open | and $output !~ m|XML.com|s ), "<mt:reblogsourcefeeds> respects offset and limit arguments simultaneously");
+$test_txt = q{<mt:reblogsourcefeeds sort="title"><mt:reblogsourcetitle>,</mt:reblogsourcefeeds>};
+$tmpl = MT::Template->new();
+$tmpl->text($test_txt);
+$tmpl->blog_id( $blog->id );
+$tmpl->save;
+$output = $tmpl->build($ctx);
+ok( $output eq 'MovableType.org - Home for the MT Community,Open,XML.com,', 'reblogsourcefeeds allows sorting by sourcefeed title');
+my $open = Reblog::ReblogSourcefeed->load(3);
+$open->label('a');
+$open->save;
+my $xml = Reblog::ReblogSourcefeed->load(1);
+$xml->label('b');
+$xml->save;
+my $mtorg = Reblog::ReblogSourcefeed->load(2);
+$mtorg->label('c');
+$mtorg->save;
+$test_txt = q{<mt:reblogsourcefeeds sort="label"><mt:reblogsourcetitle>,</mt:reblogsourcefeeds>};
+$tmpl = MT::Template->new();
+$tmpl->text($test_txt);
+$tmpl->blog_id( $blog->id );
+$tmpl->save;
+$output = $tmpl->build($ctx);
+ok( $output eq 'Open,XML.com,MovableType.org - Home for the MT Community,', 'reblogsourcefeeds allows sorting by sourcefeed label');
+
+my $badfeed = MT->model('ReblogSourcefeed')->new();
+$badfeed->is_active(0);
+$badfeed->blog_id( $blog->id );
+$badfeed->url(q{http://bad.feed/url});
+$badfeed->label(q{bad!});
+$badfeed->save();
+
+$test_txt = q{<mt:reblogsourcefeeds sort="title"><mt:reblogsourcetitle></mt:reblogsourcefeeds>};
+$tmpl = MT::Template->new();
+$tmpl->text($test_txt);
+$tmpl->blog_id( $blog->id );
+$tmpl->save;
+$output = $tmpl->build($ctx);
+ok( $output =~ m|bad\!$|, 'Sourcefeed label is used as title if no entry is available');
+
+$test_txt = q{<mt:reblogsourcefeeds sort="title"><mt:reblogsourceurl></mt:reblogsourcefeeds>};
+$tmpl = MT::Template->new();
+$tmpl->text($test_txt);
+$tmpl->blog_id( $blog->id );
+$tmpl->save;
+$output = $tmpl->build($ctx);
+ok( $output =~ m|http://bad.feed/url$|, 'Sourcefeed feed url is used as source url if no entry is available');
+
+$test_txt = q{<mt:reblogsourcefeeds sort="last_checked"><mt:reblogsourcetitle>,</mt:reblogsourcefeeds>};
+$tmpl = MT::Template->new();
+$tmpl->text($test_txt);
+$tmpl->blog_id( $blog->id );
+$tmpl->save;
+$output = $tmpl->build($ctx);
+ok($output =~ m|^XML\.com,| && $output =~ m|bad\!,$|, 'reblogsourcefeeds allows sorting by last_checked, with unchecked (new) feeds forced to the end' );
+
+$test_txt = q{<mt:reblogsourcefeeds sort="last_checked" active_only="1"><mt:reblogsourcetitle>,</mt:reblogsourcefeeds>};
+$tmpl = MT::Template->new();
+$tmpl->text($test_txt);
+$tmpl->blog_id( $blog->id );
+$tmpl->save;
+$output = $tmpl->build($ctx);
+ok($output =~ m|^XML\.com,| && $output !~ m|bad\!|, 'reblogsourcefeeds accepts active_only argument' );
