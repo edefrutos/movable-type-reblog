@@ -9,7 +9,7 @@
 # version 2 for more details.  You should have received a copy of the GNU
 # General Public License version 2 along with this program. If not, see
 # <http://www.gnu.org/licenses/>.
-# $Id: Tags.pm 18705 2009-04-19 16:54:22Z steve $
+# $Id: Tags.pm 18797 2009-04-21 12:22:59Z steve $
 
 package Reblog::Tags;
 use strict;
@@ -92,7 +92,7 @@ sub _hdlr_entry_reblog_source_url {
     my ( $ctx, $args ) = @_;
 
     my $entry = $ctx->stash('entry')
-        or return $ctx->_no_entry_error('EntryReblogSourceURL');
+        or return $ctx->_no_entry_error('EntryReblogSourceLink');
 
     require Reblog::ReblogData;
     my $rbd = Reblog::ReblogData->load( { entry_id => $entry->id } )
@@ -339,22 +339,14 @@ sub _hdlr_reblog_enclosure_entries {
 
 sub _hdlr_reblog_entries {
     my ( $ctx, $args, $cond ) = @_;
-    my ( $limit, $offset, $sourcefeed );
+    my ( $limit, $offset );
+    my ( $sourcefeed, $sourcefeed_url, $sourcefeed_id );
+    $sourcefeed_id = 0;
     my $res     = '';
     my $builder = $ctx->stash('builder');
     my $tokens  = $ctx->stash('tokens');
     my $blog_id = $ctx->stash('blog_id');
 
-    if ( $args->{sourcefeed} ) {
-        $sourcefeed = $args->{sourcefeed};
-    }
-    elsif ( $ctx->stash('reblog_source') ) {
-        my $source = $ctx->stash('reblog_source');
-        $sourcefeed = $source->{feed_url};
-    }
-    else {
-        return;
-    }
     my @entries;
     $offset = $args->{offset} ? $args->{offset} : 0;
 
@@ -369,24 +361,59 @@ sub _hdlr_reblog_entries {
     elsif ( $args->{lastn} ) {
         $query_args{'limit'} = $args->{lastn};
     }
-    @entries = MT::Entry->load(
-        { blog_id => $blog_id },
+
+    # Set sourcefeed restriction
+    if ( $args->{sourcefeed} ) {
+        $sourcefeed_url = $args->{sourcefeed};
+    }
+    elsif ( $args->{sourcefeed_id} ) {
+        $sourcefeed_id = $args->{sourcefeed_id};
+    }
+    elsif ( $args->{sourcefeed_label} ) {
+        $sourcefeed = Reblog::ReblogSourcefeed->load(
+            { blog_id => $blog_id, label => $args->{sourcefeed_label} } );
+        return '' if ( ! $sourcefeed );
+        $sourcefeed_id = $sourcefeed->id;
+    }
+    elsif ( $args->{sourcefeed_url} ) {
+        $sourcefeed = Reblog::ReblogSourcefeed->load(
+            { blog_id => $blog_id, url => $args->{sourcefeed_url} } );
+        return '' if ( ! $sourcefeed );
+        $sourcefeed_id = $sourcefeed->id;
+    }
+    elsif ( $ctx->stash('reblog_source') ) {
+        my $source = $ctx->stash('reblog_source');
+        $sourcefeed_id = $source->{id};
+    }
+    my $sourceargs;
+    if ($sourcefeed_id) {
+        $sourceargs->{sourcefeed_id} = $sourcefeed_id;
+    }
+    elsif ($sourcefeed_url) {
+        $sourceargs->{source_feed_url} = $sourcefeed_url;
+    }
+
+    # Actually do load
+    my $e_iter = MT::Entry->load_iter(
+        { blog_id => $blog_id, status => MT::Entry::RELEASE() },
         {   'join' => [
                 'Reblog::ReblogData', 'entry_id',
-                { source_feed_url => $sourcefeed }, \%query_args
+                $sourceargs,          \%query_args
             ]
         }
     );
 
     my $i = 0;
-    foreach my $entry (@entries) {
+    my $entry = $e_iter->();
+    while ( $entry ) {
+        my $next = $e_iter->();
         local $ctx->{__stash}{entry}         = $entry;
         local $ctx->{current_timestamp}      = $entry->authored_on;
         local $ctx->{modification_timestamp} = $entry->modified_on;
 
         my $vars = $ctx->{__stash}{vars} ||= {};
         local $vars->{__first__}   = !$i;
-        local $vars->{__last__}    = !defined $entries[ $i + 1 ];
+        local $vars->{__last__}    = !$next;
         local $vars->{__odd__}     = ( $i % 2 ) == 0;             # 0-based $i
         local $vars->{__even__}    = ( $i % 2 ) == 1;
         local $vars->{__counter__} = $i + 1;
@@ -402,6 +429,8 @@ sub _hdlr_reblog_entries {
         ) or return $ctx->error( $ctx->errstr );
         $res .= $out;
         $i++;
+        last if ( ! $next );
+        $entry = $next;
     }
     $res;
 }
@@ -422,8 +451,16 @@ sub _hdlr_reblog_sourcefeeds {
         ($blog) or return $ctx->error('No blog in context');
         $blog_id = $blog->id;
     }
-
     my $arguments;
+    if ( $args->{id} ) {
+        $arguments->{id} = $args->{id};
+    }
+    elsif ( $args->{url} ) {
+        $arguments->{url} = $args->{url};
+    }
+    elsif ( $args->{label} ) {
+        $arguments->{label} = $args->{label};
+    }
     $arguments->{blog_id} = $blog_id;
     if ( $args->{active_only} ) {
         $arguments->{is_active} = 1;
@@ -480,8 +517,9 @@ sub _hdlr_reblog_sourcefeeds {
             case q{last_checked} {
                 @slice = map { $_->[0] }
                     sort {
-                    return 1 if ( ! defined $a->[1] );
-                    return -1  if ( ! defined $b->[1] );
+                    return 1
+                        if ( !defined $a->[1] );
+                    return -1 if ( !defined $b->[1] );
                     $a->[1] <=> $b->[1]
                     }
                     map { [ $_, $_->{sourcefeed}->epoch_last_read ] } @slice;
